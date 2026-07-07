@@ -33,7 +33,7 @@ $.getJSON("https://espaso.github.io/dial/codigos/Bookmarks", function(obj) {
 	if (param1=="") {var pagina = obj.roots.bookmark_bar.children[0].children;}else{var pagina = obj.roots.bookmark_bar.children[0].children[param1].children;}
 	//alert(pagina);
 	conta = pagina.length;
-	var html = "", miniatura = "";
+	var html = "", miniatura = "", etiqueta = "";
 	document.title = obj.roots.bookmark_bar.children[0].name;
 	for (var i = 0; i < conta; i++) {
 		if (pagina[i].type=="folder") {

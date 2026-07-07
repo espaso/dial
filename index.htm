@@ -43,7 +43,7 @@ $.getJSON("https://espaso.github.io/dial/codigos/Bookmarks", function(obj) {
 		if (pagina[i].type=="folder") {html += "<iframe src='index.htm?p="+npage+"' style='border:0;' width='100%' height='100%'></iframe>";}
 		//else {if(!"imagens/"+miniatura+".png") {html += "<img src='imagens/vazio.png' width='100%' height='100%'></img>";}
 		else{html += "<img src='imagens/"+miniatura+".png' width='100%' height='100%'></img>";}//}
-		html += "</div><div class='titulo'>"+pagina[i].name+"</div>";
+		html += "</div><div class='titulo'>"+pagina[i].name.split('-').slice(2).join('-').trim()+"</div>";
 		html += "</div></div> "; 
 	}
 	Display.innerHTML = html;

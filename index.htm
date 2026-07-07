@@ -15,12 +15,10 @@ var conta = 0;
 function extrairTexto(textoOriginal) {
   // Divide o texto pelos hífens
   var partes = textoOriginal.split('-');
-
   // Se não houver nenhum hífen (ou seja, apenas 1 parte), mantém o texto original
   if (partes.length < 3) {
     return textoOriginal.trim();
   }
-
   // Pega a partir da 3ª parte e junta de volta mantendo os hífens seguintes
   return partes.slice(2).join('-').trim();
 }

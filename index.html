@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmarks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f0f0f;
+      --card-bg: #181818;
+      --card-hover: #222222;
+      --text-main: #f1f1f1;
+      --text-muted: #aaa;
+      --accent-red: #ff0000;
+      --font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      padding-bottom: 40px;
+    }
+
+    /* Topbar estilo YouTube */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--bg-color);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #272727;
+      z-index: 100;
+    }
+
+    header svg {
+      fill: var(--accent-red);
+      width: 32px;
+      height: 32px;
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    /* Grid Responsivo (Padrão YouTube) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 500px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 850px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1200px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* Card */
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      background-color: var(--card-hover);
+      transform: translateY(-2px);
+    }
+
+    .card-thumbnail {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #272727;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 12px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--text-main);
+    }
+
+    .card-description {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-all;
+    }
+
+    .card-category {
+      align-self: flex-start;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      background-color: #272727;
+      color: #aaa;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* Status e Mensagens */
+    .status-msg {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <svg viewBox="0 0 24 24">
+      <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+    </svg>
+    <h1>Bookmarks</h1>
+  </header>
+
+  <main class="container">
+    <div id="status" class="status-msg">Carregando links...</div>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <script>
+    const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
+
+    // Função para extrair URLs se o JSON for no formato de exportação de navegadores (Chrome/Firefox)
+    function parseBookmarks(data) {
+      let items = [];
+
+      function parseNode(node) {
+        if (node.type === "url" || node.url) {
+          items.push({
+            title: node.name || node.title || node.url,
+            url: node.url,
+            description: node.url,
+            image: node.image || `https://www.google.com/s2/favicons?domain=${node.url}&sz=128`,
+            category: node.category || "Bookmark"
+          });
+        }
+        if (node.children) {
+          node.children.forEach(parseNode);
+        }
+      }
+
+      if (Array.isArray(data)) {
+        // Formato array simples
+        data.forEach(item => {
+          if (item.url) {
+            items.push({
+              title: item.title || item.name || item.url,
+              url: item.url,
+              description: item.description || item.url,
+              image: item.image || `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`,
+              category: item.category || ""
+            });
+          } else {
+            parseNode(item);
+          }
+        });
+      } else if (typeof data === "object") {
+        // Formato objeto árvore
+        parseNode(data);
+      }
+
+      return items;
+    }
+
+    async function loadBookmarks() {
+      const grid = document.getElementById("grid");
+      const status = document.getElementById("status");
+
+      try {
+        const response = await fetch(JSON_URL);
+        if (!response.ok) throw new Error("Não foi possível carregar o arquivo.");
+
+        const rawData = await response.json();
+        const bookmarks = parseBookmarks(rawData);
+
+        status.style.display = "none";
+
+        if (bookmarks.length === 0) {
+          status.textContent = "Nenhum link foi encontrado no arquivo.";
+          status.style.display = "block";
+          return;
+        }
+
+        bookmarks.forEach(item => {
+          const card = document.createElement("a");
+          card.className = "card";
+          card.href = item.url;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+
+          // Usamos a imagem do item ou o Favicon em alta resolução via Google
+          const imageUrl = item.image;
+
+          card.innerHTML = `
+            <img class="card-thumbnail" src="${imageUrl}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x338/272727/FFFFFF?text=Link'">
+            <div class="card-content">
+              <h2 class="card-title">${item.title}</h2>
+              <p class="card-description">${item.description}</p>
+              ${item.category ? `<span class="card-category">${item.category}</span>` : ""}
+            </div>
+          `;
+
+          grid.appendChild(card);
+        });
+
+      } catch (error) {
+        status.textContent = "Erro ao carregar os bookmarks. Verifique a permissão do repositório ou o formato do JSON.";
+        console.error("Erro no carregamento:", error);
+      }
+    }
+
+    loadBookmarks();
+  </script>
+</body>
+</html>

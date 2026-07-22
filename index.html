@@ -29,7 +29,6 @@
       padding-bottom: 40px;
     }
 
-    /* Topbar estilo YouTube */
     header {
       position: sticky;
       top: 0;
@@ -51,34 +50,24 @@
     header h1 {
       font-size: 1.3rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
     }
 
-    /* Container */
     .container {
       max-width: 1400px;
       margin: 24px auto;
       padding: 0 16px;
     }
 
-    /* Grid Responsivo (Padrão YouTube) */
     .grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 16px;
     }
 
-    @media (min-width: 500px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 850px) {
-      .grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (min-width: 1200px) {
-      .grid { grid-template-columns: repeat(4, 1fr); }
-    }
+    @media (min-width: 500px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 850px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1200px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 
-    /* Card */
     .card {
       background-color: var(--card-bg);
       border-radius: 12px;
@@ -87,7 +76,7 @@
       flex-direction: column;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.2s ease, background-color 0.2s ease;
+      transition: transform 0.2s, background-color 0.2s;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
@@ -118,7 +107,6 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      color: var(--text-main);
     }
 
     .card-description {
@@ -132,23 +120,23 @@
       word-break: break-all;
     }
 
-    .card-category {
-      align-self: flex-start;
-      margin-top: 4px;
-      font-size: 0.75rem;
-      background-color: #272727;
-      color: #aaa;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-weight: 500;
-    }
-
-    /* Status e Mensagens */
     .status-msg {
       text-align: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 1rem;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #7289da;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: left;
+      max-height: 300px;
+      overflow: auto;
+      font-size: 0.85rem;
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -169,46 +157,34 @@
   <script>
     const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
 
-    // Função para extrair URLs se o JSON for no formato de exportação de navegadores (Chrome/Firefox)
-    function parseBookmarks(data) {
-      let items = [];
+    // Extrai URLs buscando qualquer propriedade comum de link no JSON
+    function extractBookmarksUniversal(data) {
+      let results = [];
 
-      function parseNode(node) {
-        if (node.type === "url" || node.url) {
-          items.push({
-            title: node.name || node.title || node.url,
-            url: node.url,
-            description: node.url,
-            image: node.image || `https://www.google.com/s2/favicons?domain=${node.url}&sz=128`,
-            category: node.category || "Bookmark"
-          });
-        }
-        if (node.children) {
-          node.children.forEach(parseNode);
-        }
-      }
+      function search(obj) {
+        if (!obj || typeof obj !== 'object') return;
 
-      if (Array.isArray(data)) {
-        // Formato array simples
-        data.forEach(item => {
-          if (item.url) {
-            items.push({
-              title: item.title || item.name || item.url,
-              url: item.url,
-              description: item.description || item.url,
-              image: item.image || `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`,
-              category: item.category || ""
-            });
-          } else {
-            parseNode(item);
+        // Se for um objeto contendo uma URL válida
+        const possibleUrl = obj.url || obj.href || obj.link || obj.uri || obj.URL;
+        
+        if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
+          const title = obj.title || obj.name || obj.label || obj.text || possibleUrl;
+          const image = obj.image || obj.icon || obj.thumbnail || `https://www.google.com/s2/favicons?domain=${possibleUrl}&sz=128`;
+          const description = obj.description || obj.desc || possibleUrl;
+
+          results.push({ title, url: possibleUrl, image, description });
+        }
+
+        // Se tiver filhos ou for lista/objeto com propriedades internas
+        for (let key in obj) {
+          if (typeof obj[key] === 'object') {
+            search(obj[key]);
           }
-        });
-      } else if (typeof data === "object") {
-        // Formato objeto árvore
-        parseNode(data);
+        }
       }
 
-      return items;
+      search(data);
+      return results;
     }
 
     async function loadBookmarks() {
@@ -217,18 +193,21 @@
 
       try {
         const response = await fetch(JSON_URL);
-        if (!response.ok) throw new Error("Não foi possível carregar o arquivo.");
+        if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
 
         const rawData = await response.json();
-        const bookmarks = parseBookmarks(rawData);
-
-        status.style.display = "none";
+        const bookmarks = extractBookmarksUniversal(rawData);
 
         if (bookmarks.length === 0) {
-          status.textContent = "Nenhum link foi encontrado no arquivo.";
-          status.style.display = "block";
+          status.innerHTML = `
+            <p>Nenhum link no formato esperado foi extraído do arquivo.</p>
+            <p>Abaixo está o conteúdo recebido do arquivo <code>Bookmarks</code>:</p>
+            <pre>${JSON.stringify(rawData, null, 2)}</pre>
+          `;
           return;
         }
+
+        status.style.display = "none";
 
         bookmarks.forEach(item => {
           const card = document.createElement("a");
@@ -237,15 +216,11 @@
           card.target = "_blank";
           card.rel = "noopener noreferrer";
 
-          // Usamos a imagem do item ou o Favicon em alta resolução via Google
-          const imageUrl = item.image;
-
           card.innerHTML = `
-            <img class="card-thumbnail" src="${imageUrl}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x338/272727/FFFFFF?text=Link'">
+            <img class="card-thumbnail" src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x338/272727/FFFFFF?text=Link'">
             <div class="card-content">
               <h2 class="card-title">${item.title}</h2>
               <p class="card-description">${item.description}</p>
-              ${item.category ? `<span class="card-category">${item.category}</span>` : ""}
             </div>
           `;
 
@@ -253,8 +228,11 @@
         });
 
       } catch (error) {
-        status.textContent = "Erro ao carregar os bookmarks. Verifique a permissão do repositório ou o formato do JSON.";
-        console.error("Erro no carregamento:", error);
+        status.innerHTML = `
+          <p style="color: #ff5555;">Erro ao acessar ou ler o arquivo do GitHub.</p>
+          <small>${error.message}</small>
+        `;
+        console.error(error);
       }
     }
 

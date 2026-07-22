@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bookmarks</title>
+  <title>Bookmarks - Playlists</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -30,7 +30,7 @@
       padding-bottom: 50px;
     }
 
-    /* Header no estilo YouTube */
+    /* Topbar */
     header {
       position: sticky;
       top: 0;
@@ -38,20 +38,54 @@
       padding: 16px 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       border-bottom: 1px solid var(--border-color);
       z-index: 100;
     }
 
-    header svg {
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .brand svg {
       fill: var(--accent-red);
       width: 32px;
       height: 32px;
     }
 
-    header h1 {
+    .brand h1 {
       font-size: 1.3rem;
       font-weight: 700;
+    }
+
+    /* Botão Voltar (Estilo YT) */
+    .btn-back {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: #272727;
+      color: var(--text-main);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 18px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-back:hover {
+      background: #383838;
+    }
+
+    .btn-back svg {
+      fill: currentColor;
+      width: 18px;
+      height: 18px;
     }
 
     .container {
@@ -60,30 +94,23 @@
       padding: 0 16px;
     }
 
-    /* Seções (Pastas) */
-    .folder-section {
-      margin-bottom: 40px;
-    }
-
-    .folder-title {
-      font-size: 1.2rem;
+    /* Cabeçalho da Visão Atual */
+    .view-title {
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: var(--text-main);
+      gap: 10px;
     }
 
-    .folder-title svg {
+    .view-title svg {
       fill: var(--text-muted);
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
 
-    /* Grid Responsivo por Pasta */
+    /* Grid Responsivo estilo YouTube */
     .grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -94,7 +121,7 @@
     @media (min-width: 850px) { .grid { grid-template-columns: repeat(3, 1fr); } }
     @media (min-width: 1200px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 
-    /* Card */
+    /* Base de Card */
     .card {
       background-color: var(--card-bg);
       border-radius: 12px;
@@ -105,6 +132,7 @@
       color: inherit;
       transition: transform 0.2s, background-color 0.2s;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
     }
 
     .card:hover {
@@ -112,18 +140,50 @@
       transform: translateY(-2px);
     }
 
-    .card-thumbnail {
+    .card-thumbnail-wrapper {
+      position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
       background-color: #272727;
+      overflow: hidden;
+    }
+
+    .card-thumbnail {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
 
+    /* Badge de Playlist do YouTube na capa */
+    .playlist-badge {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      width: 40%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      backdrop-filter: blur(2px);
+    }
+
+    .playlist-badge svg {
+      fill: #fff;
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Conteúdo dos Cards */
     .card-content {
       padding: 12px 14px 16px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
 
     .card-title {
@@ -149,40 +209,38 @@
 
     .status-msg {
       text-align: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
       color: var(--text-muted);
       font-size: 1rem;
-    }
-
-    pre {
-      background: #1e1e1e;
-      color: #7289da;
-      padding: 16px;
-      border-radius: 8px;
-      text-align: left;
-      max-height: 300px;
-      overflow: auto;
-      font-size: 0.85rem;
-      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <svg viewBox="0 0 24 24">
-      <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
-    </svg>
-    <h1>Bookmarks</h1>
+    <button id="btnBack" class="btn-back" onclick="showPlaylistsView()">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      Voltar para Playlists
+    </button>
+    <div class="brand" onclick="showPlaylistsView()">
+      <svg viewBox="0 0 24 24">
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+      </svg>
+      <h1>Bookmarks</h1>
+    </div>
   </header>
 
-  <main class="container" id="content">
-    <div id="status" class="status-msg">Carregando links e pastas...</div>
+  <main class="container">
+    <div id="status" class="status-msg">Carregando dados...</div>
+    <div id="viewHeader" class="view-title" style="display: none;"></div>
+    <div id="grid" class="grid"></div>
   </main>
 
   <script>
     const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
     const BASE_IMAGE_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/imagens/";
+
+    let globalFoldersData = {};
 
     function getPngImagePath(title) {
       if (!title) return "";
@@ -190,17 +248,15 @@
       return BASE_IMAGE_URL + fileName;
     }
 
-    // Organiza os bookmarks agrupados por pastas
+    // Organiza a árvore do JSON em um objeto de Pastas/Playlists
     function parseFoldersAndBookmarks(node, currentFolder = "Geral", foldersMap = {}) {
       if (!node) return foldersMap;
 
-      // Se for uma lista/array
       if (Array.isArray(node)) {
         node.forEach(item => parseFoldersAndBookmarks(item, currentFolder, foldersMap));
         return foldersMap;
       }
 
-      // Se for um nó de pasta do navegador (ex: Chrome/Firefox/Edge)
       if (node.type === "folder" || (node.children && !node.url && !node.href && !node.link)) {
         const folderName = node.name || node.title || currentFolder;
         if (node.children) {
@@ -209,7 +265,6 @@
         return foldersMap;
       }
 
-      // Se for um link válido
       const possibleUrl = node.url || node.href || node.link || node.uri || node.URL;
       if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
         const title = node.title || node.name || node.label || node.text || possibleUrl;
@@ -227,11 +282,9 @@
         return foldersMap;
       }
 
-      // Se for um objeto contendo chaves que podem ser subpastas ou listas
       if (typeof node === 'object') {
         for (let key in node) {
           if (typeof node[key] === 'object') {
-            // Se a chave não for meta-propriedade, usa como nome da pasta
             const nextFolder = (isNaN(key) && key !== 'children' && key !== 'roots') ? key : currentFolder;
             parseFoldersAndBookmarks(node[key], nextFolder, foldersMap);
           }
@@ -241,8 +294,102 @@
       return foldersMap;
     }
 
+    // VISÃO 1: Lista todas as Pastas no formato de Cards de Playlist
+    function showPlaylistsView() {
+      window.location.hash = "";
+      document.getElementById("btnBack").style.display = "none";
+      
+      const viewHeader = document.getElementById("viewHeader");
+      viewHeader.style.display = "flex";
+      viewHeader.innerHTML = `
+        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+        Playlists (${Object.keys(globalFoldersData).length})
+      `;
+
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+
+      Object.keys(globalFoldersData).forEach(folderName => {
+        const links = globalFoldersData[folderName];
+        if (!links || links.length === 0) return;
+
+        // Usa a imagem do 1º item como capa da Playlist
+        const coverImage = getPngImagePath(links[0].title);
+        const faviconFallback = `https://www.google.com/s2/favicons?domain=${links[0].url}&sz=128`;
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.onclick = () => showPlaylistItemsView(folderName);
+
+        card.innerHTML = `
+          <div class="card-thumbnail-wrapper">
+            <img class="card-thumbnail" 
+                 src="${coverImage}" 
+                 alt="${folderName}" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='${faviconFallback}';">
+            <div class="playlist-badge">
+              <svg viewBox="0 0 24 24"><path d="M4 10h12v2H4zm0-4h12v2H4zm0 8h8v2H4zm10 0v6l5-3z"/></svg>
+              <span>${links.length}</span>
+            </div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">${folderName}</h2>
+            <p class="card-description">Playlist • ${links.length} ${links.length === 1 ? 'item' : 'itens'}</p>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    // VISÃO 2: Lista os Links/Cards da Playlist Selecionada
+    function showPlaylistItemsView(folderName) {
+      const links = globalFoldersData[folderName];
+      if (!links) return;
+
+      window.location.hash = encodeURIComponent(folderName);
+      document.getElementById("btnBack").style.display = "inline-flex";
+
+      const viewHeader = document.getElementById("viewHeader");
+      viewHeader.style.display = "flex";
+      viewHeader.innerHTML = `
+        <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+        ${folderName}
+      `;
+
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+
+      links.forEach(item => {
+        const card = document.createElement("a");
+        card.className = "card";
+        card.href = item.url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+
+        const imageUrl = getPngImagePath(item.title);
+        const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
+
+        card.innerHTML = `
+          <div class="card-thumbnail-wrapper">
+            <img class="card-thumbnail" 
+                 src="${imageUrl}" 
+                 alt="${item.title}" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='${faviconFallback}';">
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">${item.title}</h2>
+            <p class="card-description">${item.description}</p>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
     async function loadBookmarks() {
-      const content = document.getElementById("content");
       const status = document.getElementById("status");
 
       try {
@@ -250,67 +397,17 @@
         if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
 
         const rawData = await response.json();
-        const foldersMap = parseFoldersAndBookmarks(rawData);
-
-        const folderNames = Object.keys(foldersMap);
-
-        if (folderNames.length === 0) {
-          status.innerHTML = `
-            <p>Nenhum link ou pasta foi encontrado no arquivo JSON.</p>
-            <pre>${JSON.stringify(rawData, null, 2)}</pre>
-          `;
-          return;
-        }
+        globalFoldersData = parseFoldersAndBookmarks(rawData);
 
         status.style.display = "none";
 
-        // Renderiza cada pasta como uma seção separada
-        folderNames.forEach(folderName => {
-          const links = foldersMap[folderName];
-          if (!links || links.length === 0) return;
-
-          const section = document.createElement("section");
-          section.className = "folder-section";
-
-          const titleEl = document.createElement("h2");
-          titleEl.className = "folder-title";
-          titleEl.innerHTML = `
-            <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-            ${folderName}
-          `;
-
-          const grid = document.createElement("div");
-          grid.className = "grid";
-
-          links.forEach(item => {
-            const card = document.createElement("a");
-            card.className = "card";
-            card.href = item.url;
-            card.target = "_blank";
-            card.rel = "noopener noreferrer";
-
-            const imageUrl = getPngImagePath(item.title);
-            const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
-
-            card.innerHTML = `
-              <img class="card-thumbnail" 
-                   src="${imageUrl}" 
-                   alt="${item.title}" 
-                   loading="lazy" 
-                   onerror="this.onerror=null; this.src='${faviconFallback}';">
-              <div class="card-content">
-                <h2 class="card-title">${item.title}</h2>
-                <p class="card-description">${item.description}</p>
-              </div>
-            `;
-
-            grid.appendChild(card);
-          });
-
-          section.appendChild(titleEl);
-          section.appendChild(grid);
-          content.appendChild(section);
-        });
+        // Verifica se há um hash na URL ao carregar (para permitir links diretos a playlists)
+        const initialHash = decodeURIComponent(window.location.hash.replace("#", ""));
+        if (initialHash && globalFoldersData[initialHash]) {
+          showPlaylistItemsView(initialHash);
+        } else {
+          showPlaylistsView();
+        }
 
       } catch (error) {
         status.innerHTML = `
@@ -320,6 +417,16 @@
         console.error(error);
       }
     }
+
+    // Detecta mudança na navegação do histórico/botão voltar do navegador
+    window.onhashchange = function() {
+      const folderName = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (folderName && globalFoldersData[folderName]) {
+        showPlaylistItemsView(folderName);
+      } else {
+        showPlaylistsView();
+      }
+    };
 
     loadBookmarks();
   </script>

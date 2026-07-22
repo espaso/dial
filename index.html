@@ -58,7 +58,7 @@
       padding: 0 16px;
     }
 
-    /* Grid estilo YouTube */
+    /* Grid responsivo estilo YouTube */
     .grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -157,28 +157,18 @@
 
   <script>
     const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
-    const BASE_REPO_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/";
+    const BASE_IMAGE_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/imagens/";
 
-    // Resolve o caminho da imagem verificando se está no diretório local /imagens/
-    function resolveImagePath(imgProp, index, url) {
-      if (imgProp) {
-        // Se já for uma URL completa, retorna ela
-        if (imgProp.startsWith("http://") || imgProp.startsWith("https://")) {
-          return imgProp;
-        }
-        // Se for um caminho relativo, anexa ao diretório imagens do repositório
-        const cleanedPath = imgProp.replace(/^[\.\/]+/, "");
-        if (cleanedPath.startsWith("imagens/")) {
-          return BASE_REPO_URL + cleanedPath;
-        }
-        return BASE_REPO_URL + "imagens/" + cleanedPath;
-      }
-
-      // Se não houver campo de imagem, busca o favicon via Google como alternativa
-      return `https://www.google.com/s2/favicons?domain=${url}&sz=128`;
+    // Converte o nome do item no caminho exato da imagem .png
+    function getPngImagePath(title) {
+      if (!title) return "";
+      
+      // Remove espaços extras e adiciona a extensão .png
+      const fileName = encodeURIComponent(title.trim()) + ".png";
+      return BASE_IMAGE_URL + fileName;
     }
 
-    // Varredura universal no JSON
+    // Varre recursivamente o JSON para encontrar qualquer estrutura com URLs
     function extractBookmarksUniversal(data) {
       let results = [];
 
@@ -189,15 +179,9 @@
         
         if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
           const title = obj.title || obj.name || obj.label || obj.text || possibleUrl;
-          const imgRaw = obj.image || obj.icon || obj.thumbnail || obj.imagem || obj.thumb;
           const description = obj.description || obj.desc || possibleUrl;
 
-          results.push({
-            title,
-            url: possibleUrl,
-            imgRaw,
-            description
-          });
+          results.push({ title, url: possibleUrl, description });
         }
 
         for (let key in obj) {
@@ -224,8 +208,7 @@
 
         if (bookmarks.length === 0) {
           status.innerHTML = `
-            <p>Nenhum link foi extraído do arquivo.</p>
-            <p>Estrutura recebida:</p>
+            <p>Nenhum link foi encontrado no arquivo JSON.</p>
             <pre>${JSON.stringify(rawData, null, 2)}</pre>
           `;
           return;
@@ -233,17 +216,24 @@
 
         status.style.display = "none";
 
-        bookmarks.forEach((item, idx) => {
+        bookmarks.forEach(item => {
           const card = document.createElement("a");
           card.className = "card";
           card.href = item.url;
           card.target = "_blank";
           card.rel = "noopener noreferrer";
 
-          const imageUrl = resolveImagePath(item.imgRaw, idx, item.url);
+          // Gera a URL da imagem .png com o mesmo nome do título do link
+          const imageUrl = getPngImagePath(item.title);
+          // Fallback para Favicon caso a imagem .png não exista no diretório
+          const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
 
           card.innerHTML = `
-            <img class="card-thumbnail" src="${imageUrl}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x338/272727/FFFFFF?text=Link'">
+            <img class="card-thumbnail" 
+                 src="${imageUrl}" 
+                 alt="${item.title}" 
+                 loading="lazy" 
+                 onerror="this.onerror=null; this.src='${faviconFallback}';">
             <div class="card-content">
               <h2 class="card-title">${item.title}</h2>
               <p class="card-description">${item.description}</p>
@@ -255,7 +245,7 @@
 
       } catch (error) {
         status.innerHTML = `
-          <p style="color: #ff5555;">Erro ao acessar o arquivo de Bookmarks do repositório.</p>
+          <p style="color: #ff5555;">Erro ao ler os dados do repositório.</p>
           <small>${error.message}</small>
         `;
         console.error(error);

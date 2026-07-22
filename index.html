@@ -13,6 +13,7 @@
       --text-main: #f1f1f1;
       --text-muted: #aaa;
       --accent-red: #ff0000;
+      --border-color: #272727;
       --font-family: 'Roboto', sans-serif;
     }
 
@@ -26,9 +27,10 @@
       background-color: var(--bg-color);
       color: var(--text-main);
       font-family: var(--font-family);
-      padding-bottom: 40px;
+      padding-bottom: 50px;
     }
 
+    /* Header no estilo YouTube */
     header {
       position: sticky;
       top: 0;
@@ -37,7 +39,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      border-bottom: 1px solid #272727;
+      border-bottom: 1px solid var(--border-color);
       z-index: 100;
     }
 
@@ -58,7 +60,30 @@
       padding: 0 16px;
     }
 
-    /* Grid responsivo estilo YouTube */
+    /* Seções (Pastas) */
+    .folder-section {
+      margin-bottom: 40px;
+    }
+
+    .folder-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-main);
+    }
+
+    .folder-title svg {
+      fill: var(--text-muted);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Grid Responsivo por Pasta */
     .grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -69,6 +94,7 @@
     @media (min-width: 850px) { .grid { grid-template-columns: repeat(3, 1fr); } }
     @media (min-width: 1200px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 
+    /* Card */
     .card {
       background-color: var(--card-bg);
       border-radius: 12px;
@@ -150,53 +176,73 @@
     <h1>Bookmarks</h1>
   </header>
 
-  <main class="container">
-    <div id="status" class="status-msg">Carregando links...</div>
-    <div id="grid" class="grid"></div>
+  <main class="container" id="content">
+    <div id="status" class="status-msg">Carregando links e pastas...</div>
   </main>
 
   <script>
     const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
     const BASE_IMAGE_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/imagens/";
 
-    // Converte o nome do item no caminho exato da imagem .png
     function getPngImagePath(title) {
       if (!title) return "";
-      
-      // Remove espaços extras e adiciona a extensão .png
       const fileName = encodeURIComponent(title.trim()) + ".png";
       return BASE_IMAGE_URL + fileName;
     }
 
-    // Varre recursivamente o JSON para encontrar qualquer estrutura com URLs
-    function extractBookmarksUniversal(data) {
-      let results = [];
+    // Organiza os bookmarks agrupados por pastas
+    function parseFoldersAndBookmarks(node, currentFolder = "Geral", foldersMap = {}) {
+      if (!node) return foldersMap;
 
-      function search(obj) {
-        if (!obj || typeof obj !== 'object') return;
+      // Se for uma lista/array
+      if (Array.isArray(node)) {
+        node.forEach(item => parseFoldersAndBookmarks(item, currentFolder, foldersMap));
+        return foldersMap;
+      }
 
-        const possibleUrl = obj.url || obj.href || obj.link || obj.uri || obj.URL;
-        
-        if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
-          const title = obj.title || obj.name || obj.label || obj.text || possibleUrl;
-          const description = obj.description || obj.desc || possibleUrl;
+      // Se for um nó de pasta do navegador (ex: Chrome/Firefox/Edge)
+      if (node.type === "folder" || (node.children && !node.url && !node.href && !node.link)) {
+        const folderName = node.name || node.title || currentFolder;
+        if (node.children) {
+          node.children.forEach(child => parseFoldersAndBookmarks(child, folderName, foldersMap));
+        }
+        return foldersMap;
+      }
 
-          results.push({ title, url: possibleUrl, description });
+      // Se for um link válido
+      const possibleUrl = node.url || node.href || node.link || node.uri || node.URL;
+      if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
+        const title = node.title || node.name || node.label || node.text || possibleUrl;
+        const description = node.description || node.desc || possibleUrl;
+
+        if (!foldersMap[currentFolder]) {
+          foldersMap[currentFolder] = [];
         }
 
-        for (let key in obj) {
-          if (typeof obj[key] === 'object') {
-            search(obj[key]);
+        foldersMap[currentFolder].push({
+          title,
+          url: possibleUrl,
+          description
+        });
+        return foldersMap;
+      }
+
+      // Se for um objeto contendo chaves que podem ser subpastas ou listas
+      if (typeof node === 'object') {
+        for (let key in node) {
+          if (typeof node[key] === 'object') {
+            // Se a chave não for meta-propriedade, usa como nome da pasta
+            const nextFolder = (isNaN(key) && key !== 'children' && key !== 'roots') ? key : currentFolder;
+            parseFoldersAndBookmarks(node[key], nextFolder, foldersMap);
           }
         }
       }
 
-      search(data);
-      return results;
+      return foldersMap;
     }
 
     async function loadBookmarks() {
-      const grid = document.getElementById("grid");
+      const content = document.getElementById("content");
       const status = document.getElementById("status");
 
       try {
@@ -204,11 +250,13 @@
         if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
 
         const rawData = await response.json();
-        const bookmarks = extractBookmarksUniversal(rawData);
+        const foldersMap = parseFoldersAndBookmarks(rawData);
 
-        if (bookmarks.length === 0) {
+        const folderNames = Object.keys(foldersMap);
+
+        if (folderNames.length === 0) {
           status.innerHTML = `
-            <p>Nenhum link foi encontrado no arquivo JSON.</p>
+            <p>Nenhum link ou pasta foi encontrado no arquivo JSON.</p>
             <pre>${JSON.stringify(rawData, null, 2)}</pre>
           `;
           return;
@@ -216,31 +264,52 @@
 
         status.style.display = "none";
 
-        bookmarks.forEach(item => {
-          const card = document.createElement("a");
-          card.className = "card";
-          card.href = item.url;
-          card.target = "_blank";
-          card.rel = "noopener noreferrer";
+        // Renderiza cada pasta como uma seção separada
+        folderNames.forEach(folderName => {
+          const links = foldersMap[folderName];
+          if (!links || links.length === 0) return;
 
-          // Gera a URL da imagem .png com o mesmo nome do título do link
-          const imageUrl = getPngImagePath(item.title);
-          // Fallback para Favicon caso a imagem .png não exista no diretório
-          const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
+          const section = document.createElement("section");
+          section.className = "folder-section";
 
-          card.innerHTML = `
-            <img class="card-thumbnail" 
-                 src="${imageUrl}" 
-                 alt="${item.title}" 
-                 loading="lazy" 
-                 onerror="this.onerror=null; this.src='${faviconFallback}';">
-            <div class="card-content">
-              <h2 class="card-title">${item.title}</h2>
-              <p class="card-description">${item.description}</p>
-            </div>
+          const titleEl = document.createElement("h2");
+          titleEl.className = "folder-title";
+          titleEl.innerHTML = `
+            <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+            ${folderName}
           `;
 
-          grid.appendChild(card);
+          const grid = document.createElement("div");
+          grid.className = "grid";
+
+          links.forEach(item => {
+            const card = document.createElement("a");
+            card.className = "card";
+            card.href = item.url;
+            card.target = "_blank";
+            card.rel = "noopener noreferrer";
+
+            const imageUrl = getPngImagePath(item.title);
+            const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
+
+            card.innerHTML = `
+              <img class="card-thumbnail" 
+                   src="${imageUrl}" 
+                   alt="${item.title}" 
+                   loading="lazy" 
+                   onerror="this.onerror=null; this.src='${faviconFallback}';">
+              <div class="card-content">
+                <h2 class="card-title">${item.title}</h2>
+                <p class="card-description">${item.description}</p>
+              </div>
+            `;
+
+            grid.appendChild(card);
+          });
+
+          section.appendChild(titleEl);
+          section.appendChild(grid);
+          content.appendChild(section);
         });
 
       } catch (error) {

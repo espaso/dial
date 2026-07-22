@@ -58,6 +58,7 @@
       padding: 0 16px;
     }
 
+    /* Grid estilo YouTube */
     .grid {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -156,26 +157,49 @@
 
   <script>
     const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
+    const BASE_REPO_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/";
 
-    // Extrai URLs buscando qualquer propriedade comum de link no JSON
+    // Resolve o caminho da imagem verificando se está no diretório local /imagens/
+    function resolveImagePath(imgProp, index, url) {
+      if (imgProp) {
+        // Se já for uma URL completa, retorna ela
+        if (imgProp.startsWith("http://") || imgProp.startsWith("https://")) {
+          return imgProp;
+        }
+        // Se for um caminho relativo, anexa ao diretório imagens do repositório
+        const cleanedPath = imgProp.replace(/^[\.\/]+/, "");
+        if (cleanedPath.startsWith("imagens/")) {
+          return BASE_REPO_URL + cleanedPath;
+        }
+        return BASE_REPO_URL + "imagens/" + cleanedPath;
+      }
+
+      // Se não houver campo de imagem, busca o favicon via Google como alternativa
+      return `https://www.google.com/s2/favicons?domain=${url}&sz=128`;
+    }
+
+    // Varredura universal no JSON
     function extractBookmarksUniversal(data) {
       let results = [];
 
       function search(obj) {
         if (!obj || typeof obj !== 'object') return;
 
-        // Se for um objeto contendo uma URL válida
         const possibleUrl = obj.url || obj.href || obj.link || obj.uri || obj.URL;
         
         if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
           const title = obj.title || obj.name || obj.label || obj.text || possibleUrl;
-          const image = obj.image || obj.icon || obj.thumbnail || `https://www.google.com/s2/favicons?domain=${possibleUrl}&sz=128`;
+          const imgRaw = obj.image || obj.icon || obj.thumbnail || obj.imagem || obj.thumb;
           const description = obj.description || obj.desc || possibleUrl;
 
-          results.push({ title, url: possibleUrl, image, description });
+          results.push({
+            title,
+            url: possibleUrl,
+            imgRaw,
+            description
+          });
         }
 
-        // Se tiver filhos ou for lista/objeto com propriedades internas
         for (let key in obj) {
           if (typeof obj[key] === 'object') {
             search(obj[key]);
@@ -200,8 +224,8 @@
 
         if (bookmarks.length === 0) {
           status.innerHTML = `
-            <p>Nenhum link no formato esperado foi extraído do arquivo.</p>
-            <p>Abaixo está o conteúdo recebido do arquivo <code>Bookmarks</code>:</p>
+            <p>Nenhum link foi extraído do arquivo.</p>
+            <p>Estrutura recebida:</p>
             <pre>${JSON.stringify(rawData, null, 2)}</pre>
           `;
           return;
@@ -209,15 +233,17 @@
 
         status.style.display = "none";
 
-        bookmarks.forEach(item => {
+        bookmarks.forEach((item, idx) => {
           const card = document.createElement("a");
           card.className = "card";
           card.href = item.url;
           card.target = "_blank";
           card.rel = "noopener noreferrer";
 
+          const imageUrl = resolveImagePath(item.imgRaw, idx, item.url);
+
           card.innerHTML = `
-            <img class="card-thumbnail" src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x338/272727/FFFFFF?text=Link'">
+            <img class="card-thumbnail" src="${imageUrl}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x338/272727/FFFFFF?text=Link'">
             <div class="card-content">
               <h2 class="card-title">${item.title}</h2>
               <p class="card-description">${item.description}</p>
@@ -229,7 +255,7 @@
 
       } catch (error) {
         status.innerHTML = `
-          <p style="color: #ff5555;">Erro ao acessar ou ler o arquivo do GitHub.</p>
+          <p style="color: #ff5555;">Erro ao acessar o arquivo de Bookmarks do repositório.</p>
           <small>${error.message}</small>
         `;
         console.error(error);

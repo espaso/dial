@@ -236,199 +236,224 @@
     <div id="grid" class="grid"></div>
   </main>
 
-  <script>
-    const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
-    const BASE_IMAGE_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/imagens/";
+<script>
+  const JSON_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/codigos/Bookmarks";
+  const BASE_IMAGE_URL = "https://raw.githubusercontent.com/espaso/dial/refs/heads/gh-pages/imagens/";
 
-    let globalFoldersData = {};
+  // Nome padrão dado para os links soltos na pasta raiz
+  const ROOT_FOLDER_NAME = "Geral";
 
-    function getPngImagePath(title) {
-      if (!title) return "";
-      const fileName = encodeURIComponent(title.trim()) + ".png";
-      return BASE_IMAGE_URL + fileName;
-    }
+  let globalFoldersData = {};
 
-    // Organiza a árvore do JSON em um objeto de Pastas/Playlists
-    function parseFoldersAndBookmarks(node, currentFolder = "Geral", foldersMap = {}) {
-      if (!node) return foldersMap;
+  function getPngImagePath(title) {
+    if (!title) return "";
+    const fileName = encodeURIComponent(title.trim()) + ".png";
+    return BASE_IMAGE_URL + fileName;
+  }
 
-      if (Array.isArray(node)) {
-        node.forEach(item => parseFoldersAndBookmarks(item, currentFolder, foldersMap));
-        return foldersMap;
-      }
+  // Organiza a árvore do JSON em um objeto de Pastas/Playlists
+  function parseFoldersAndBookmarks(node, currentFolder = ROOT_FOLDER_NAME, foldersMap = {}) {
+    if (!node) return foldersMap;
 
-      if (node.type === "folder" || (node.children && !node.url && !node.href && !node.link)) {
-        const folderName = node.name || node.title || currentFolder;
-        if (node.children) {
-          node.children.forEach(child => parseFoldersAndBookmarks(child, folderName, foldersMap));
-        }
-        return foldersMap;
-      }
-
-      const possibleUrl = node.url || node.href || node.link || node.uri || node.URL;
-      if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
-        const title = node.title || node.name || node.label || node.text || possibleUrl;
-        const description = node.description || node.desc || possibleUrl;
-
-        if (!foldersMap[currentFolder]) {
-          foldersMap[currentFolder] = [];
-        }
-
-        foldersMap[currentFolder].push({
-          title,
-          url: possibleUrl,
-          description
-        });
-        return foldersMap;
-      }
-
-      if (typeof node === 'object') {
-        for (let key in node) {
-          if (typeof node[key] === 'object') {
-            const nextFolder = (isNaN(key) && key !== 'children' && key !== 'roots') ? key : currentFolder;
-            parseFoldersAndBookmarks(node[key], nextFolder, foldersMap);
-          }
-        }
-      }
-
+    if (Array.isArray(node)) {
+      node.forEach(item => parseFoldersAndBookmarks(item, currentFolder, foldersMap));
       return foldersMap;
     }
 
-    // VISÃO 1: Lista todas as Pastas no formato de Cards de Playlist
-    function showPlaylistsView() {
-      window.location.hash = "";
-      document.getElementById("btnBack").style.display = "none";
-      
-      const viewHeader = document.getElementById("viewHeader");
-      viewHeader.style.display = "flex";
-      viewHeader.innerHTML = `
-        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
-        Playlists (${Object.keys(globalFoldersData).length})
-      `;
-
-      const grid = document.getElementById("grid");
-      grid.innerHTML = "";
-
-      Object.keys(globalFoldersData).forEach(folderName => {
-        const links = globalFoldersData[folderName];
-        if (!links || links.length === 0) return;
-
-        // Usa a imagem do 1º item como capa da Playlist
-        const coverImage = getPngImagePath(links[0].title);
-        const faviconFallback = `https://www.google.com/s2/favicons?domain=${links[0].url}&sz=128`;
-
-        const card = document.createElement("div");
-        card.className = "card";
-        card.onclick = () => showPlaylistItemsView(folderName);
-
-        card.innerHTML = `
-          <div class="card-thumbnail-wrapper">
-            <img class="card-thumbnail" 
-                 src="${coverImage}" 
-                 alt="${folderName}" 
-                 loading="lazy" 
-                 onerror="this.onerror=null; this.src='${faviconFallback}';">
-            <div class="playlist-badge">
-              <svg viewBox="0 0 24 24"><path d="M4 10h12v2H4zm0-4h12v2H4zm0 8h8v2H4zm10 0v6l5-3z"/></svg>
-              <span>${links.length}</span>
-            </div>
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">${folderName}</h2>
-            <p class="card-description">Playlist • ${links.length} ${links.length === 1 ? 'item' : 'itens'}</p>
-          </div>
-        `;
-
-        grid.appendChild(card);
-      });
+    if (node.type === "folder" || (node.children && !node.url && !node.href && !node.link)) {
+      const folderName = node.name || node.title || currentFolder;
+      if (node.children) {
+        node.children.forEach(child => parseFoldersAndBookmarks(child, folderName, foldersMap));
+      }
+      return foldersMap;
     }
 
-    // VISÃO 2: Lista os Links/Cards da Playlist Selecionada
-    function showPlaylistItemsView(folderName) {
-      const links = globalFoldersData[folderName];
-      if (!links) return;
+    const possibleUrl = node.url || node.href || node.link || node.uri || node.URL;
+    if (possibleUrl && typeof possibleUrl === 'string' && possibleUrl.startsWith('http')) {
+      const title = node.title || node.name || node.label || node.text || possibleUrl;
+      const description = node.description || node.desc || possibleUrl;
 
-      window.location.hash = encodeURIComponent(folderName);
-      document.getElementById("btnBack").style.display = "inline-flex";
+      if (!foldersMap[currentFolder]) {
+        foldersMap[currentFolder] = [];
+      }
 
-      const viewHeader = document.getElementById("viewHeader");
-      viewHeader.style.display = "flex";
-      viewHeader.innerHTML = `
-        <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-        ${folderName}
-      `;
+      foldersMap[currentFolder].push({
+        title,
+        url: possibleUrl,
+        description
+      });
+      return foldersMap;
+    }
 
-      const grid = document.getElementById("grid");
-      grid.innerHTML = "";
+    if (typeof node === 'object') {
+      for (let key in node) {
+        if (typeof node[key] === 'object') {
+          const nextFolder = (isNaN(key) && key !== 'children' && key !== 'roots') ? key : currentFolder;
+          parseFoldersAndBookmarks(node[key], nextFolder, foldersMap);
+        }
+      }
+    }
 
-      links.forEach(item => {
+    return foldersMap;
+  }
+
+  // Helper para criar o HTML de um Card Individual de Vídeo/Link
+  function createIndividualCardHtml(item) {
+    const imageUrl = getPngImagePath(item.title);
+    const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
+
+    return `
+      <div class="card-thumbnail-wrapper">
+        <img class="card-thumbnail" 
+             src="${imageUrl}" 
+             alt="${item.title}" 
+             loading="lazy" 
+             onerror="this.onerror=null; this.src='${faviconFallback}';">
+      </div>
+      <div class="card-content">
+        <h2 class="card-title">${item.title}</h2>
+        <p class="card-description">${item.description}</p>
+      </div>
+    `;
+  }
+
+  // VISÃO 1: Lista Playlists + Links Individuais da Pasta Raiz
+  function showPlaylistsView() {
+    window.location.hash = "";
+    document.getElementById("btnBack").style.display = "none";
+    
+    const viewHeader = document.getElementById("viewHeader");
+    viewHeader.style.display = "flex";
+    
+    // Contagem de elementos para o título
+    const playlistCount = Object.keys(globalFoldersData).filter(f => f !== ROOT_FOLDER_NAME).length;
+    const rootItemsCount = globalFoldersData[ROOT_FOLDER_NAME] ? globalFoldersData[ROOT_FOLDER_NAME].length : 0;
+
+    viewHeader.innerHTML = `
+      <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+      Início (${playlistCount} Playlists, ${rootItemsCount} Vídeos)
+    `;
+
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+
+    // 1. PRIMEIRO: Exibe os links individuais da pasta RAIZ (Geral)
+    if (globalFoldersData[ROOT_FOLDER_NAME]) {
+      globalFoldersData[ROOT_FOLDER_NAME].forEach(item => {
         const card = document.createElement("a");
         card.className = "card";
         card.href = item.url;
         card.target = "_blank";
         card.rel = "noopener noreferrer";
-
-        const imageUrl = getPngImagePath(item.title);
-        const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
-
-        card.innerHTML = `
-          <div class="card-thumbnail-wrapper">
-            <img class="card-thumbnail" 
-                 src="${imageUrl}" 
-                 alt="${item.title}" 
-                 loading="lazy" 
-                 onerror="this.onerror=null; this.src='${faviconFallback}';">
-          </div>
-          <div class="card-content">
-            <h2 class="card-title">${item.title}</h2>
-            <p class="card-description">${item.description}</p>
-          </div>
-        `;
-
+        card.innerHTML = createIndividualCardHtml(item);
         grid.appendChild(card);
       });
     }
 
-    async function loadBookmarks() {
-      const status = document.getElementById("status");
+    // 2. SEGUNDO: Exibe as outras pastas como Cards de Playlist
+    Object.keys(globalFoldersData).forEach(folderName => {
+      // Ignora a pasta raiz para não exibi-la como playlist
+      if (folderName === ROOT_FOLDER_NAME) return;
 
-      try {
-        const response = await fetch(JSON_URL);
-        if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
+      const links = globalFoldersData[folderName];
+      if (!links || links.length === 0) return;
 
-        const rawData = await response.json();
-        globalFoldersData = parseFoldersAndBookmarks(rawData);
+      const coverImage = getPngImagePath(links[0].title);
+      const faviconFallback = `https://www.google.com/s2/favicons?domain=${links[0].url}&sz=128`;
 
-        status.style.display = "none";
+      const card = document.createElement("div");
+      card.className = "card";
+      card.onclick = () => showPlaylistItemsView(folderName);
 
-        // Verifica se há um hash na URL ao carregar (para permitir links diretos a playlists)
-        const initialHash = decodeURIComponent(window.location.hash.replace("#", ""));
-        if (initialHash && globalFoldersData[initialHash]) {
-          showPlaylistItemsView(initialHash);
-        } else {
-          showPlaylistsView();
-        }
+      card.innerHTML = `
+        <div class="card-thumbnail-wrapper">
+          <img class="card-thumbnail" 
+               src="${coverImage}" 
+               alt="${folderName}" 
+               loading="lazy" 
+               onerror="this.onerror=null; this.src='${faviconFallback}';">
+          <div class="playlist-badge">
+            <svg viewBox="0 0 24 24"><path d="M4 10h12v2H4zm0-4h12v2H4zm0 8h8v2H4zm10 0v6l5-3z"/></svg>
+            <span>${links.length}</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <h2 class="card-title">${folderName}</h2>
+          <p class="card-description">Playlist • ${links.length} ${links.length === 1 ? 'item' : 'itens'}</p>
+        </div>
+      `;
 
-      } catch (error) {
-        status.innerHTML = `
-          <p style="color: #ff5555;">Erro ao ler os dados do repositório.</p>
-          <small>${error.message}</small>
-        `;
-        console.error(error);
-      }
-    }
+      grid.appendChild(card);
+    });
+  }
 
-    // Detecta mudança na navegação do histórico/botão voltar do navegador
-    window.onhashchange = function() {
-      const folderName = decodeURIComponent(window.location.hash.replace("#", ""));
-      if (folderName && globalFoldersData[folderName]) {
-        showPlaylistItemsView(folderName);
+  // VISÃO 2: Lista os Links/Cards da Playlist Selecionada
+  function showPlaylistItemsView(folderName) {
+    const links = globalFoldersData[folderName];
+    if (!links) return;
+
+    window.location.hash = encodeURIComponent(folderName);
+    document.getElementById("btnBack").style.display = "inline-flex";
+
+    const viewHeader = document.getElementById("viewHeader");
+    viewHeader.style.display = "flex";
+    viewHeader.innerHTML = `
+      <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+      ${folderName}
+    `;
+
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+
+    links.forEach(item => {
+      const card = document.createElement("a");
+      card.className = "card";
+      card.href = item.url;
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+      card.innerHTML = createIndividualCardHtml(item);
+      grid.appendChild(card);
+    });
+  }
+
+  async function loadBookmarks() {
+    const status = document.getElementById("status");
+
+    try {
+      const response = await fetch(JSON_URL);
+      if (!response.ok) throw new Error(`HTTP Error ${response.status}`);
+
+      const rawData = await response.json();
+      globalFoldersData = parseFoldersAndBookmarks(rawData);
+
+      status.style.display = "none";
+
+      const initialHash = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (initialHash && globalFoldersData[initialHash] && initialHash !== ROOT_FOLDER_NAME) {
+        showPlaylistItemsView(initialHash);
       } else {
         showPlaylistsView();
       }
-    };
 
-    loadBookmarks();
-  </script>
+    } catch (error) {
+      status.innerHTML = `
+        <p style="color: #ff5555;">Erro ao ler os dados do repositório.</p>
+        <small>${error.message}</small>
+      `;
+      console.error(error);
+    }
+  }
+
+  window.onhashchange = function() {
+    const folderName = decodeURIComponent(window.location.hash.replace("#", ""));
+    if (folderName && globalFoldersData[folderName] && folderName !== ROOT_FOLDER_NAME) {
+      showPlaylistItemsView(folderName);
+    } else {
+      showPlaylistsView();
+    }
+  };
+
+  loadBookmarks();
+</script>
 </body>
 </html>

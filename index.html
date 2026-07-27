@@ -213,6 +213,17 @@
       color: var(--text-muted);
       font-size: 1rem;
     }
+
+    /* Para Chrome, Safari, Edge e Opera */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Para Firefox e IE/Edge antigo */
+    body {
+      -ms-overflow-style: none;  /* IE e Edge antigo */
+      scrollbar-width: none;  /* Firefox */
+    }
   </style>
 </head>
 <body>

@@ -28,6 +28,8 @@
       color: var(--text-main);
       font-family: var(--font-family);
       padding-bottom: 50px;
+      -ms-overflow-style: none;  /* IE e Edge antigo */
+      scrollbar-width: none;  /* Firefox */      
     }
 
     /* Para Chrome, Safari, Edge e Opera */
@@ -35,12 +37,6 @@
       display: none;
     }
     
-    /* Para Firefox e IE/Edge antigo */
-    body {
-      -ms-overflow-style: none;  /* IE e Edge antigo */
-      scrollbar-width: none;  /* Firefox */
-    }
-
     /* Topbar */
     header {
       position: sticky;

@@ -343,17 +343,6 @@
       const grid = document.getElementById("grid");
       grid.innerHTML = "";
 
-      // 1. PRIMEIRO: Renderiza os links soltos da PASTA RAIZ como cards individuais
-      globalRootLinks.forEach(item => {
-        const card = document.createElement("a");
-        card.className = "card";
-        card.href = item.url;
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
-        card.innerHTML = createIndividualCardHtml(item);
-        grid.appendChild(card);
-      });
-
       // 2. SEGUNDO: Renderiza as SUBPASTAS no formato de Cards de Playlist
       playlistNames.forEach(folderName => {
         const links = globalPlaylists[folderName];
@@ -384,6 +373,17 @@
           </div>
         `;
 
+        grid.appendChild(card);
+      });
+
+      // 1. PRIMEIRO: Renderiza os links soltos da PASTA RAIZ como cards individuais
+      globalRootLinks.forEach(item => {
+        const card = document.createElement("a");
+        card.className = "card";
+        card.href = item.url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+        card.innerHTML = createIndividualCardHtml(item);
         grid.appendChild(card);
       });
     }

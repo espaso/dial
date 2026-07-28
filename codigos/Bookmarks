@@ -6,7 +6,7 @@
             {
                "children": [],
                "date_added": "0",
-               "date_modified": "0",
+               "date_modified": "1777941949",
                "id": "4",
                "name": "Synced Bookmarks",
                "type": "folder"
@@ -14,7 +14,7 @@
             {
                "children": [],
                "date_added": "0",
-               "date_modified": "0",
+               "date_modified": "1777941949",
                "id": "5",
                "name": "Other Bookmarks",
                "type": "folder"
@@ -132,7 +132,7 @@
                               }
                            ],
                            "date_added": "1574340160",
-                           "date_modified": "1574340160",
+                           "date_modified": "1758822454",
                            "id": "8",
                            "name": "Documento",
                            "type": "folder"
@@ -211,7 +211,7 @@
                               }
                            ],
                            "date_added": "1613267650",
-                           "date_modified": "1613267650",
+                           "date_modified": "1758822606",
                            "id": "24",
                            "name": "Estudo",
                            "type": "folder"
@@ -262,7 +262,7 @@
                               }
                            ],
                            "date_added": "1689613902",
-                           "date_modified": "1689613902",
+                           "date_modified": "1745940793",
                            "id": "35",
                            "name": "HITSS",
                            "type": "folder"
@@ -383,28 +383,28 @@
                               }
                            ],
                            "date_added": "1632152540",
-                           "date_modified": "1632152540",
+                           "date_modified": "1758822620",
                            "id": "42",
                            "name": "Plataforma",
                            "type": "folder"
                         }
                      ],
                      "date_added": "1695877159",
-                     "date_modified": "1695877159",
+                     "date_modified": "1695878140",
                      "id": "7",
                      "name": "Fast Dial",
                      "type": "folder"
                   }
                ],
                "date_added": "0",
-               "date_modified": "0",
+               "date_modified": "1777941949",
                "id": "6",
                "name": "Bookmark Bar",
                "type": "folder"
             }
          ],
          "date_added": "0",
-         "date_modified": "1785203782513000",
+         "date_modified": "13422415549000000",
          "id": "1",
          "name": "Barra de favoritos",
          "type": "folder"
@@ -412,7 +412,7 @@
       "other": {
          "children": [],
          "date_added": "0",
-         "date_modified": "0",
+         "date_modified": "13422415549000000",
          "id": "2",
          "name": "Outros favoritos",
          "type": "folder"
@@ -420,7 +420,7 @@
       "synced": {
          "children": [],
          "date_added": "0",
-         "date_modified": "0",
+         "date_modified": "13422415549000000",
          "id": "3",
          "name": "Favoritos do celular",
          "type": "folder"

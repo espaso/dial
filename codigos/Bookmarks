@@ -24,381 +24,415 @@
                   {
                      "children": [
                         {
+                           "children": [],
+                           "date_added": "0",
+                           "date_modified": "1777941949",
+                           "id": "8",
+                           "name": "Synced Bookmarks",
+                           "type": "folder"
+                        },
+                        {
+                           "children": [],
+                           "date_added": "0",
+                           "date_modified": "1777941949",
+                           "id": "9",
+                           "name": "Other Bookmarks",
+                           "type": "folder"
+                        },
+                        {
                            "children": [
                               {
-                                 "date_added": "1669522172",
-                                 "id": "6",
-                                 "name": "Documento - Despesa - Acordo Bradesco",
-                                 "type": "url",
-                                 "url": "https://negocieipanema.com.br/"
-                              },
-                              {
-                                 "date_added": "1574340176",
-                                 "id": "7",
-                                 "name": "Documento - Despesa - Amil [435046454] [15440293736]",
-                                 "type": "url",
-                                 "url": "https://www.amil.com.br/beneficiario/#/"
-                              },
-                              {
-                                 "date_added": "1626467236",
-                                 "id": "8",
-                                 "name": "Documento - Despesa - Light",
-                                 "type": "url",
-                                 "url": "https://agenciavirtual.light.com.br/portal/"
-                              },
-                              {
-                                 "date_added": "1691692347",
-                                 "id": "9",
-                                 "name": "Documento - Despesa - Renner",
-                                 "type": "url",
-                                 "url": "https://www.realizesolucoesfinanceiras.com.br/cartoes-renner/login"
-                              },
-                              {
-                                 "date_added": "1752663299",
-                                 "id": "10",
-                                 "name": "Documento - Divida - Consulta de débitos do ipva e emissão de DARJ",
-                                 "type": "url",
-                                 "url": "https://darj-ipva-web.fazenda.rj.gov.br/darj-ipva-web/#/resultado/00251390080"
-                              },
-                              {
-                                 "date_added": "1762793739",
+                                 "children": [
+                                    {
+                                       "children": [
+                                          {
+                                             "date_added": "1669522172",
+                                             "id": "13",
+                                             "name": "Documento - Despesa - Acordo Bradesco",
+                                             "type": "url",
+                                             "url": "https://negocieipanema.com.br/"
+                                          },
+                                          {
+                                             "date_added": "1574340176",
+                                             "id": "14",
+                                             "name": "Documento - Despesa - Amil [435046454] [15440293736]",
+                                             "type": "url",
+                                             "url": "https://www.amil.com.br/beneficiario/#/"
+                                          },
+                                          {
+                                             "date_added": "1626467236",
+                                             "id": "15",
+                                             "name": "Documento - Despesa - Light",
+                                             "type": "url",
+                                             "url": "https://agenciavirtual.light.com.br/portal/"
+                                          },
+                                          {
+                                             "date_added": "1691692347",
+                                             "id": "16",
+                                             "name": "Documento - Despesa - Renner",
+                                             "type": "url",
+                                             "url": "https://www.realizesolucoesfinanceiras.com.br/cartoes-renner/login"
+                                          },
+                                          {
+                                             "date_added": "1752663299",
+                                             "id": "17",
+                                             "name": "Documento - Divida - Consulta de débitos do ipva e emissão de DARJ",
+                                             "type": "url",
+                                             "url": "https://darj-ipva-web.fazenda.rj.gov.br/darj-ipva-web/#/resultado/00251390080"
+                                          },
+                                          {
+                                             "date_added": "1762793739",
+                                             "id": "18",
+                                             "name": "Documento - Divida - Dívida Ativa - PGE",
+                                             "type": "url",
+                                             "url": "https://pge.rj.gov.br/divida-ativa"
+                                          },
+                                          {
+                                             "date_added": "1758817626",
+                                             "id": "19",
+                                             "name": "Documento - Divida - Multa [251390080] [LLG8994]",
+                                             "type": "url",
+                                             "url": "https://www.ib7.bradesco.com.br/ibpfdetranrj/debitoVeiculoRJGrmConsultar.do"
+                                          },
+                                          {
+                                             "date_added": "1758817869",
+                                             "id": "20",
+                                             "name": "Documento - Documento - Detran-RJ",
+                                             "type": "url",
+                                             "url": "https://www.detran.rj.gov.br/"
+                                          },
+                                          {
+                                             "date_added": "1668622637",
+                                             "id": "21",
+                                             "name": "Documento - Documento - GOV.BR",
+                                             "type": "url",
+                                             "url": "https://www.gov.br/pt-br"
+                                          },
+                                          {
+                                             "date_added": "1689785967",
+                                             "id": "22",
+                                             "name": "Documento - Documento - gov.br - Acesse sua conta",
+                                             "type": "url",
+                                             "url": "https://sso.acesso.gov.br/login?client_id=mir.receita.fazenda.gov.br&amp;authorization_id=1896f17fede"
+                                          },
+                                          {
+                                             "date_added": "1574340328",
+                                             "id": "23",
+                                             "name": "Documento - Documento - IRPF",
+                                             "type": "url",
+                                             "url": "https://cav.receita.fazenda.gov.br/autenticacao"
+                                          },
+                                          {
+                                             "date_added": "1665676357",
+                                             "id": "24",
+                                             "name": "Documento - Documento - Portal Carioca Digital – Prefeitura da Cidade do Rio de Janeiro",
+                                             "type": "url",
+                                             "url": "https://home.carioca.rio/"
+                                          },
+                                          {
+                                             "date_added": "1758818509",
+                                             "id": "25",
+                                             "name": "Documento - Documento - Registrato",
+                                             "type": "url",
+                                             "url": "https://www.bcb.gov.br/meubc/registrato"
+                                          },
+                                          {
+                                             "date_added": "1758818776",
+                                             "id": "26",
+                                             "name": "Documento - Documento - Regularize",
+                                             "type": "url",
+                                             "url": "https://www.regularize.pgfn.gov.br/"
+                                          },
+                                          {
+                                             "date_added": "1758818858",
+                                             "id": "27",
+                                             "name": "Documento - Documento - Tribunal Superior Eleitoral",
+                                             "type": "url",
+                                             "url": "https://www.tse.jus.br/"
+                                          }
+                                       ],
+                                       "date_added": "1574340160",
+                                       "date_modified": "1758822454",
+                                       "id": "12",
+                                       "name": "Documento",
+                                       "type": "folder"
+                                    },
+                                    {
+                                       "children": [
+                                          {
+                                             "date_added": "1775821412",
+                                             "id": "29",
+                                             "name": "Estudo - Mercado - B.Trader - YouTube",
+                                             "type": "url",
+                                             "url": "https://www.youtube.com/@BTrader"
+                                          },
+                                          {
+                                             "date_added": "1758819462",
+                                             "id": "30",
+                                             "name": "Estudo - Mercado - B.Trader Online – Escola para operar na Bolsa de Valores",
+                                             "type": "url",
+                                             "url": "https://online.btrader.com.br/"
+                                          },
+                                          {
+                                             "date_added": "1785160706",
+                                             "id": "31",
+                                             "name": "Estudo - Mercado - Checklist de Estratégias",
+                                             "type": "url",
+                                             "url": "https://espaso.github.io/estudo/"
+                                          },
+                                          {
+                                             "date_added": "1758819765",
+                                             "id": "32",
+                                             "name": "Estudo - Mercado - LÓGICA OPERACIONAL - DESCOMPLICANDO SIMPLES",
+                                             "type": "url",
+                                             "url": "https://sso.hotmart.com/login?service=https%3A%2F%2Flogicaoperacionaldescomplicand.club.hotmart.com&amp;renew=true&amp;systemOrigin=OldClub"
+                                          },
+                                          {
+                                             "date_added": "1774796079",
+                                             "id": "33",
+                                             "name": "Estudo - Tecnologia - FIAP - Nano Courses",
+                                             "type": "url",
+                                             "url": "https://on.fiap.com.br/nano-courses/"
+                                          },
+                                          {
+                                             "date_added": "1733121960",
+                                             "id": "34",
+                                             "name": "Estudo - Tecnologia - Future School EAD - Programe-se Programando",
+                                             "type": "url",
+                                             "url": "https://futureschoolead.com.br/#inicio"
+                                          },
+                                          {
+                                             "date_added": "1758819276",
+                                             "id": "35",
+                                             "name": "Estudo - Tecnologia - Future School EAD - YouTube",
+                                             "type": "url",
+                                             "url": "https://www.youtube.com/@FutureSchoolEAD/playlists"
+                                          },
+                                          {
+                                             "date_added": "1758819968",
+                                             "id": "36",
+                                             "name": "Estudo - Tecnologia - Menu principal - cadcobol.com.br",
+                                             "type": "url",
+                                             "url": "https://www.cadcobol.com.br/menuprin.htm"
+                                          },
+                                          {
+                                             "date_added": "1758820584",
+                                             "id": "37",
+                                             "name": "Estudo - Tecnologia - UDEMY - Faça login para continuar sua jornada de aprendizado",
+                                             "type": "url",
+                                             "url": "https://www.udemy.com/join/passwordless-auth/?next=%2Fhome%2Fmy-courses%2Flearning%2F%3Fp%3D1%26sort%3Dtitle&amp;action=login&amp;mode"
+                                          },
+                                          {
+                                             "date_added": "1758819901",
+                                             "id": "38",
+                                             "name": "Estudo - Universidade - UVA - Portal do Aluno",
+                                             "type": "url",
+                                             "url": "https://portalaluno.uva.br/Login"
+                                          }
+                                       ],
+                                       "date_added": "1613267650",
+                                       "date_modified": "1758822606",
+                                       "id": "28",
+                                       "name": "Estudo",
+                                       "type": "folder"
+                                    },
+                                    {
+                                       "children": [
+                                          {
+                                             "date_added": "1664356845",
+                                             "id": "40",
+                                             "name": "HITSS - HITSS - @HOST Login",
+                                             "type": "url",
+                                             "url": "https://host.globalhitss.com/Security/Login?ReturnUrl=%2fHoras%2fCapturaHoras2"
+                                          },
+                                          {
+                                             "date_added": "1745120700",
+                                             "id": "41",
+                                             "name": "HITSS - HITSS - Aplicativos Oracle Fusion Cloud",
+                                             "type": "url",
+                                             "url": "https://ipc.claro.com.br/idp/SSO.saml2?SAMLRequest=hVJbb9owFP4rkV94inOh0M0iVAwKQ4OVLWlV7c11ToglXzLbadp%2FPydQqe0Dez0%2B39VndvMiRfAMxnKtslGC41EAiumSq2M2ui%2FW4ZfRzXxmqRQNWbSuVr%2FhbwvWBR6nLBkeMtQaRTS13BJFJVjiGMkX%2Bx1JcUwao51mWqAz5MXyDNXONSSKuq7D3Rhrc4zSOE6ix%2F0uZzVIGnJlHVUMULDWhsEgnaGKCutHhzPlN64Goxf1n05LlnwvikN4uMsLFGxXGeJlWC%2FZJpQhrMX1clJupNj9SpNwv4Pb8bgqnpcF%2FTF9vFIbFDycG0Ke0cOtbWE7OHR%2BFKeTMP4appMiuSbjKZlM%2F6Bg5UviiroB1ce1Pi9vGGaCGo2ZlvjJRLxsojy%2Fw32PKToVTQZ6867hywGptWB6naErSd3l9X7is1fDKgHluHtF8zeHdcklFvrIFW5t6n%2BGMgFM6LbsLUcVlLPoncm30%2FjpSbergxacvf7XRYKTTy5aZRtgvOJQomAhhO6WBqiDDDnTAormJ9GPJzj%2FBw%3D%3D&amp;RelayState=id-rP-qLRODDKyUOgBXoldAilr8uCLNPzn9VExuU9c-&amp;SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&amp;Signature=VP4mrBAzxji2GCK%2FAjvAvuCUp2HdxkdXJyZfia4OJX4nI8oZP%2ByHbe%2FfKRSRBgFYw5bCu1hs0CPrvrkqa1CtGnFIPfI217LjsN215CfRVMivVxTJShg5xEyxsWDS3TcTWAVlpfL7PNc2wt2X8LM1DbTELloJpKwFP9pbp0gpbnFVSnUKf5Vafc523FC6eaQ26KggpQzfurL%2B8vrODIP4Gh3SNF1cFoqLxW6qskQ7tDWivsGEElNAD1%2BhC58yS9THo4JxPP4S75pvIcu96YIC1OGt59k%2FQd9%2BLw1xaX8uyUHmGhcGLXO5g1KfS%2F%2FG0KzqeLgawsse0BntfYmyAIWHLNXS%2F%2BmrwdmCAjNn%2Fsbxb4VUl65vMNH66Hu9LHqENfGW0yDBvne0LiczSQe%2FT89CZ%2FTSscTqzLk49%2BKJPx5t%2FSB2UwlT%2FXGpfQWZWDZjmHoSw0U1HQUPI%2FwOItJmMLNpv9cOlx%2Bg7ZbB4kzX982tn%2BZWnGCjGbYi84vY2b0GALS4"
+                                          },
+                                          {
+                                             "date_added": "1743044548",
+                                             "id": "42",
+                                             "name": "HITSS - HITSS - Email - Marcos De Franca Santos - Outlook",
+                                             "type": "url",
+                                             "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&amp;scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&amp;redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&amp;client-request-id=46ab6ed5-6d13-0145-1256-624697829384&amp;response_mode=fragment&amp;client_info=1&amp;prompt=select_account&amp;nonce=019981f4-5402-726a-bd87-505d15a3e2f3&amp;state=eyJpZCI6IjAxOTk4MWY0LTU0MDItNzc2Zi05ODc2LTgyYWZmZWYzZDU0YiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8_Y2M9ZXlKaFkyTmxjM05mZEc5clpXNGlPbnNpYm1KbUlqcDdJbVZ6YzJWdWRHbGhiQ0k2ZEhKMVpTd2lkbUZzZFdVaU9pSXhOelF6TURRME16VXlJbjBzSW5odGMxOWpZeUk2ZXlKMllXeDFaWE1pT2xzaVExQXhJbDE5ZlN3aWFXUmZkRzlyWlc0aU9uc2libUptSWpwN0ltVnpjMlZ1ZEdsaGJDSTZkSEoxWlN3aWRtRnNkV1VpT2lJeE56UXpNRFEwTXpVeUluMHNJbmh0YzE5all5STZleUoyWVd4MVpYTWlPbHNpUTFBeElsMTlmWDA&amp;claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&amp;x-client-SKU=msal.js.browser&amp;x-client-VER=4.14.0&amp;response_type=code&amp;code_challenge=vq0pgdeLEr89SuY1x0esF_1ylmRXCIwX-iHwd322qeY&amp;code_challenge_method=S256"
+                                          },
+                                          {
+                                             "date_added": "1664342147",
+                                             "id": "43",
+                                             "name": "HITSS - HITSS - Portal do Colaborador GLOBAL HITSS",
+                                             "type": "url",
+                                             "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/v2.0/authorize?client_id=9205b0ac-8e81-4326-9d0a-78219f6b9388&amp;response_type=code&amp;redirect_uri=https://portaldocolaborador.globalhitss.com.br&amp;response_mode=query&amp;scope=offline_access%20user.read%20mail.read&amp;state=ACCESSOK"
+                                          },
+                                          {
+                                             "date_added": "1690513330",
+                                             "id": "44",
+                                             "name": "HITSS - HITSS - Portal Orhganiza",
+                                             "type": "url",
+                                             "url": "https://pontodigital.globalhitss.com.br/entrar"
+                                          },
+                                          {
+                                             "date_added": "1689271182",
+                                             "id": "45",
+                                             "name": "HITSS - HITSS - Rhevolution",
+                                             "type": "url",
+                                             "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/authorize?response_type=code&amp;client_id=60b44b54-7af8-416e-8d7b-e4a612d75a1f&amp;scope=openid&amp;nonce=3305a6a9-92d7-4f19-83ca-9a36b507dc8b&amp;redirect_uri=https%3a%2f%2fportalrh.globalhitss.com.br%2f&amp;state=AppProxyState%3a%7b%22InvalidTokenRetry%22%3anull%2c%22IsMsofba%22%3afalse%2c%22OriginalRawUrl%22%3a%22https%3a%5c%2f%5c%2fportalrh.globalhitss.com.br%5c%2fords%5c%2frhportal%5c%2frhlgweb.show%22%2c%22RequestProfileId%22%3anull%2c%22SessionId%22%3a%221b3b00d9-9c37-4b28-9287-9ceb0a2a3762%22%7d%23EndOfStateParam%23&amp;client-request-id=1b3b00d9-9c37-4b28-9287-9ceb0a2a3762&amp;claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d"
+                                          }
+                                       ],
+                                       "date_added": "1689613902",
+                                       "date_modified": "1745940793",
+                                       "id": "39",
+                                       "name": "HITSS",
+                                       "type": "folder"
+                                    },
+                                    {
+                                       "children": [
+                                          {
+                                             "date_added": "1762265418",
+                                             "id": "47",
+                                             "name": "Plataforma - Conexao - Gateway Wireless",
+                                             "type": "url",
+                                             "url": "http://10.68.63.1/#/login"
+                                          },
+                                          {
+                                             "date_added": "1758822649",
+                                             "id": "48",
+                                             "name": "Plataforma - Conexao - Provedores de DNS conhecidos - AdGuard DNS Knowledge Base",
+                                             "type": "url",
+                                             "url": "https://adguard-dns.io/kb/pt-BR/general/dns-providers/"
+                                          },
+                                          {
+                                             "date_added": "1758822911",
+                                             "id": "49",
+                                             "name": "Plataforma - Corretora - Investimento em Ações - Zero Markets - Forex Broker",
+                                             "type": "url",
+                                             "url": "https://www.zeromarkets.com/pt-br/levycam/"
+                                          },
+                                          {
+                                             "date_added": "1689613575",
+                                             "id": "50",
+                                             "name": "Plataforma - Corretora - Toro Investimentos - O seu melhor jeito de investir",
+                                             "type": "url",
+                                             "url": "https://www.toroinvestimentos.com.br/trader/"
+                                          },
+                                          {
+                                             "date_added": "1703427263",
+                                             "id": "51",
+                                             "name": "Plataforma - Ferramenta - Log in to the Bitly Connections Platform",
+                                             "type": "url",
+                                             "url": "https://bitly.com/a/sign_in?rd=%2FBlbickT0GQj%2Fhome"
+                                          },
+                                          {
+                                             "date_added": "1784859033",
+                                             "id": "52",
+                                             "name": "Plataforma - Ferramenta - Mixer e conversor de áudio online",
+                                             "type": "url",
+                                             "url": "https://www.audio2edit.com/pt"
+                                          },
+                                          {
+                                             "date_added": "1706068277",
+                                             "id": "53",
+                                             "name": "Plataforma - Ferramenta - Personal Data Leak Checker Your Email Data",
+                                             "type": "url",
+                                             "url": "https://cybernews.com/personal-data-leak-check/"
+                                          },
+                                          {
+                                             "date_added": "1779060201",
+                                             "id": "54",
+                                             "name": "Plataforma - Ferramenta - PNG para PDF converta online e grátis com Adobe Acrobat",
+                                             "type": "url",
+                                             "url": "https://www.adobe.com/br/acrobat/online/png-to-pdf.html"
+                                          },
+                                          {
+                                             "date_added": "1691701257",
+                                             "id": "55",
+                                             "name": "Plataforma - Ferramenta - Site Confiável. Vai comprar Verifique se o site é confiável.",
+                                             "type": "url",
+                                             "url": "https://www.siteconfiavel.com.br/"
+                                          },
+                                          {
+                                             "date_added": "1762359728",
+                                             "id": "56",
+                                             "name": "Plataforma - Ferramenta - Y2meta - Baixador do YouTube",
+                                             "type": "url",
+                                             "url": "https://y2meta.is/pt69/"
+                                          },
+                                          {
+                                             "date_added": "1733114580",
+                                             "id": "57",
+                                             "name": "Plataforma - Repositorio - Github - espaso",
+                                             "type": "url",
+                                             "url": "https://github.com/espaso"
+                                          },
+                                          {
+                                             "date_added": "1642164153",
+                                             "id": "58",
+                                             "name": "Plataforma - Repositorio - Github - estoke",
+                                             "type": "url",
+                                             "url": "https://github.com/estoke"
+                                          },
+                                          {
+                                             "date_added": "1721142268",
+                                             "id": "59",
+                                             "name": "Plataforma - Tecnologia - ChatGPT",
+                                             "type": "url",
+                                             "url": "https://chatgpt.com/"
+                                          },
+                                          {
+                                             "date_added": "1781098863",
+                                             "id": "60",
+                                             "name": "Plataforma - Tecnologia - Claude",
+                                             "type": "url",
+                                             "url": "https://claude.ai/new"
+                                          },
+                                          {
+                                             "date_added": "1745127798",
+                                             "id": "61",
+                                             "name": "Plataforma - Tecnologia - Copilot",
+                                             "type": "url",
+                                             "url": "https://copilot.microsoft.com/"
+                                          },
+                                          {
+                                             "date_added": "1775567167",
+                                             "id": "62",
+                                             "name": "Plataforma - Tecnologia - Gemini",
+                                             "type": "url",
+                                             "url": "https://gemini.google.com/"
+                                          }
+                                       ],
+                                       "date_added": "1632152540",
+                                       "date_modified": "1758822620",
+                                       "id": "46",
+                                       "name": "Plataforma",
+                                       "type": "folder"
+                                    }
+                                 ],
+                                 "date_added": "1695877159",
+                                 "date_modified": "1695878140",
                                  "id": "11",
-                                 "name": "Documento - Divida - Dívida Ativa - PGE",
-                                 "type": "url",
-                                 "url": "https://pge.rj.gov.br/divida-ativa"
-                              },
-                              {
-                                 "date_added": "1758817626",
-                                 "id": "12",
-                                 "name": "Documento - Divida - Multa [251390080] [LLG8994]",
-                                 "type": "url",
-                                 "url": "https://www.ib7.bradesco.com.br/ibpfdetranrj/debitoVeiculoRJGrmConsultar.do"
-                              },
-                              {
-                                 "date_added": "1758817869",
-                                 "id": "13",
-                                 "name": "Documento - Documento - Detran-RJ",
-                                 "type": "url",
-                                 "url": "https://www.detran.rj.gov.br/"
-                              },
-                              {
-                                 "date_added": "1668622637",
-                                 "id": "14",
-                                 "name": "Documento - Documento - GOV.BR",
-                                 "type": "url",
-                                 "url": "https://www.gov.br/pt-br"
-                              },
-                              {
-                                 "date_added": "1689785967",
-                                 "id": "15",
-                                 "name": "Documento - Documento - gov.br - Acesse sua conta",
-                                 "type": "url",
-                                 "url": "https://sso.acesso.gov.br/login?client_id=mir.receita.fazenda.gov.br&authorization_id=1896f17fede"
-                              },
-                              {
-                                 "date_added": "1574340328",
-                                 "id": "16",
-                                 "name": "Documento - Documento - IRPF",
-                                 "type": "url",
-                                 "url": "https://cav.receita.fazenda.gov.br/autenticacao"
-                              },
-                              {
-                                 "date_added": "1665676357",
-                                 "id": "17",
-                                 "name": "Documento - Documento - Portal Carioca Digital – Prefeitura da Cidade do Rio de Janeiro",
-                                 "type": "url",
-                                 "url": "https://home.carioca.rio/"
-                              },
-                              {
-                                 "date_added": "1758818509",
-                                 "id": "18",
-                                 "name": "Documento - Documento - Registrato",
-                                 "type": "url",
-                                 "url": "https://www.bcb.gov.br/meubc/registrato"
-                              },
-                              {
-                                 "date_added": "1758818776",
-                                 "id": "19",
-                                 "name": "Documento - Documento - Regularize",
-                                 "type": "url",
-                                 "url": "https://www.regularize.pgfn.gov.br/"
-                              },
-                              {
-                                 "date_added": "1758818858",
-                                 "id": "20",
-                                 "name": "Documento - Documento - Tribunal Superior Eleitoral",
-                                 "type": "url",
-                                 "url": "https://www.tse.jus.br/"
+                                 "name": "Fast Dial",
+                                 "type": "folder"
                               }
                            ],
-                           "date_added": "1574340160",
-                           "date_modified": "1758822454",
-                           "id": "21",
-                           "name": "Documento",
-                           "type": "folder"
-                        },
-                        {
-                           "children": [
-                              {
-                                 "date_added": "1775821412",
-                                 "id": "22",
-                                 "name": "Estudo - Mercado - B.Trader - YouTube",
-                                 "type": "url",
-                                 "url": "https://www.youtube.com/@BTrader"
-                              },
-                              {
-                                 "date_added": "1758819462",
-                                 "id": "23",
-                                 "name": "Estudo - Mercado - B.Trader Online – Escola para operar na Bolsa de Valores",
-                                 "type": "url",
-                                 "url": "https://online.btrader.com.br/"
-                              },
-                              {
-                                 "date_added": "1785160706",
-                                 "id": "24",
-                                 "name": "Estudo - Mercado - Checklist de Estratégias",
-                                 "type": "url",
-                                 "url": "https://espaso.github.io/estudo/"
-                              },
-                              {
-                                 "date_added": "1758819765",
-                                 "id": "25",
-                                 "name": "Estudo - Mercado - LÓGICA OPERACIONAL - DESCOMPLICANDO SIMPLES",
-                                 "type": "url",
-                                 "url": "https://sso.hotmart.com/login?service=https%3A%2F%2Flogicaoperacionaldescomplicand.club.hotmart.com&renew=true&systemOrigin=OldClub"
-                              },
-                              {
-                                 "date_added": "1774796079",
-                                 "id": "26",
-                                 "name": "Estudo - Tecnologia - FIAP - Nano Courses",
-                                 "type": "url",
-                                 "url": "https://on.fiap.com.br/nano-courses/"
-                              },
-                              {
-                                 "date_added": "1733121960",
-                                 "id": "27",
-                                 "name": "Estudo - Tecnologia - Future School EAD - Programe-se Programando",
-                                 "type": "url",
-                                 "url": "https://futureschoolead.com.br/#inicio"
-                              },
-                              {
-                                 "date_added": "1758819276",
-                                 "id": "28",
-                                 "name": "Estudo - Tecnologia - Future School EAD - YouTube",
-                                 "type": "url",
-                                 "url": "https://www.youtube.com/@FutureSchoolEAD/playlists"
-                              },
-                              {
-                                 "date_added": "1758819968",
-                                 "id": "29",
-                                 "name": "Estudo - Tecnologia - Menu principal - cadcobol.com.br",
-                                 "type": "url",
-                                 "url": "https://www.cadcobol.com.br/menuprin.htm"
-                              },
-                              {
-                                 "date_added": "1758820584",
-                                 "id": "30",
-                                 "name": "Estudo - Tecnologia - UDEMY - Faça login para continuar sua jornada de aprendizado",
-                                 "type": "url",
-                                 "url": "https://www.udemy.com/join/passwordless-auth/?next=%2Fhome%2Fmy-courses%2Flearning%2F%3Fp%3D1%26sort%3Dtitle&action=login&mode"
-                              },
-                              {
-                                 "date_added": "1758819901",
-                                 "id": "31",
-                                 "name": "Estudo - Universidade - UVA - Portal do Aluno",
-                                 "type": "url",
-                                 "url": "https://portalaluno.uva.br/Login"
-                              }
-                           ],
-                           "date_added": "1613267650",
-                           "date_modified": "1758822606",
-                           "id": "32",
-                           "name": "Estudo",
-                           "type": "folder"
-                        },
-                        {
-                           "children": [
-                              {
-                                 "date_added": "1664356845",
-                                 "id": "33",
-                                 "name": "HITSS - HITSS - @HOST Login",
-                                 "type": "url",
-                                 "url": "https://host.globalhitss.com/Security/Login?ReturnUrl=%2fHoras%2fCapturaHoras2"
-                              },
-                              {
-                                 "date_added": "1745120700",
-                                 "id": "34",
-                                 "name": "HITSS - HITSS - Aplicativos Oracle Fusion Cloud",
-                                 "type": "url",
-                                 "url": "https://ipc.claro.com.br/idp/SSO.saml2?SAMLRequest=hVJbb9owFP4rkV94inOh0M0iVAwKQ4OVLWlV7c11ToglXzLbadp%2FPydQqe0Dez0%2B39VndvMiRfAMxnKtslGC41EAiumSq2M2ui%2FW4ZfRzXxmqRQNWbSuVr%2FhbwvWBR6nLBkeMtQaRTS13BJFJVjiGMkX%2Bx1JcUwao51mWqAz5MXyDNXONSSKuq7D3Rhrc4zSOE6ix%2F0uZzVIGnJlHVUMULDWhsEgnaGKCutHhzPlN64Goxf1n05LlnwvikN4uMsLFGxXGeJlWC%2FZJpQhrMX1clJupNj9SpNwv4Pb8bgqnpcF%2FTF9vFIbFDycG0Ke0cOtbWE7OHR%2BFKeTMP4appMiuSbjKZlM%2F6Bg5UviiroB1ce1Pi9vGGaCGo2ZlvjJRLxsojy%2Fw32PKToVTQZ6867hywGptWB6naErSd3l9X7is1fDKgHluHtF8zeHdcklFvrIFW5t6n%2BGMgFM6LbsLUcVlLPoncm30%2FjpSbergxacvf7XRYKTTy5aZRtgvOJQomAhhO6WBqiDDDnTAormJ9GPJzj%2FBw%3D%3D&RelayState=id-rP-qLRODDKyUOgBXoldAilr8uCLNPzn9VExuU9c-&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=VP4mrBAzxji2GCK%2FAjvAvuCUp2HdxkdXJyZfia4OJX4nI8oZP%2ByHbe%2FfKRSRBgFYw5bCu1hs0CPrvrkqa1CtGnFIPfI217LjsN215CfRVMivVxTJShg5xEyxsWDS3TcTWAVlpfL7PNc2wt2X8LM1DbTELloJpKwFP9pbp0gpbnFVSnUKf5Vafc523FC6eaQ26KggpQzfurL%2B8vrODIP4Gh3SNF1cFoqLxW6qskQ7tDWivsGEElNAD1%2BhC58yS9THo4JxPP4S75pvIcu96YIC1OGt59k%2FQd9%2BLw1xaX8uyUHmGhcGLXO5g1KfS%2F%2FG0KzqeLgawsse0BntfYmyAIWHLNXS%2F%2BmrwdmCAjNn%2Fsbxb4VUl65vMNH66Hu9LHqENfGW0yDBvne0LiczSQe%2FT89CZ%2FTSscTqzLk49%2BKJPx5t%2FSB2UwlT%2FXGpfQWZWDZjmHoSw0U1HQUPI%2FwOItJmMLNpv9cOlx%2Bg7ZbB4kzX982tn%2BZWnGCjGbYi84vY2b0GALS4"
-                              },
-                              {
-                                 "date_added": "1743044548",
-                                 "id": "35",
-                                 "name": "HITSS - HITSS - Email - Marcos De Franca Santos - Outlook",
-                                 "type": "url",
-                                 "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&client-request-id=46ab6ed5-6d13-0145-1256-624697829384&response_mode=fragment&client_info=1&prompt=select_account&nonce=019981f4-5402-726a-bd87-505d15a3e2f3&state=eyJpZCI6IjAxOTk4MWY0LTU0MDItNzc2Zi05ODc2LTgyYWZmZWYzZDU0YiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8_Y2M9ZXlKaFkyTmxjM05mZEc5clpXNGlPbnNpYm1KbUlqcDdJbVZ6YzJWdWRHbGhiQ0k2ZEhKMVpTd2lkbUZzZFdVaU9pSXhOelF6TURRME16VXlJbjBzSW5odGMxOWpZeUk2ZXlKMllXeDFaWE1pT2xzaVExQXhJbDE5ZlN3aWFXUmZkRzlyWlc0aU9uc2libUptSWpwN0ltVnpjMlZ1ZEdsaGJDSTZkSEoxWlN3aWRtRnNkV1VpT2lJeE56UXpNRFEwTXpVeUluMHNJbmh0YzE5all5STZleUoyWVd4MVpYTWlPbHNpUTFBeElsMTlmWDA&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.14.0&response_type=code&code_challenge=vq0pgdeLEr89SuY1x0esF_1ylmRXCIwX-iHwd322qeY&code_challenge_method=S256"
-                              },
-                              {
-                                 "date_added": "1664342147",
-                                 "id": "36",
-                                 "name": "HITSS - HITSS - Portal do Colaborador GLOBAL HITSS",
-                                 "type": "url",
-                                 "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/v2.0/authorize?client_id=9205b0ac-8e81-4326-9d0a-78219f6b9388&response_type=code&redirect_uri=https://portaldocolaborador.globalhitss.com.br&response_mode=query&scope=offline_access%20user.read%20mail.read&state=ACCESSOK"
-                              },
-                              {
-                                 "date_added": "1690513330",
-                                 "id": "37",
-                                 "name": "HITSS - HITSS - Portal Orhganiza",
-                                 "type": "url",
-                                 "url": "https://pontodigital.globalhitss.com.br/entrar"
-                              },
-                              {
-                                 "date_added": "1689271182",
-                                 "id": "38",
-                                 "name": "HITSS - HITSS - Rhevolution",
-                                 "type": "url",
-                                 "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/authorize?response_type=code&client_id=60b44b54-7af8-416e-8d7b-e4a612d75a1f&scope=openid&nonce=3305a6a9-92d7-4f19-83ca-9a36b507dc8b&redirect_uri=https%3a%2f%2fportalrh.globalhitss.com.br%2f&state=AppProxyState%3a%7b%22InvalidTokenRetry%22%3anull%2c%22IsMsofba%22%3afalse%2c%22OriginalRawUrl%22%3a%22https%3a%5c%2f%5c%2fportalrh.globalhitss.com.br%5c%2fords%5c%2frhportal%5c%2frhlgweb.show%22%2c%22RequestProfileId%22%3anull%2c%22SessionId%22%3a%221b3b00d9-9c37-4b28-9287-9ceb0a2a3762%22%7d%23EndOfStateParam%23&client-request-id=1b3b00d9-9c37-4b28-9287-9ceb0a2a3762&claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d"
-                              }
-                           ],
-                           "date_added": "1689613902",
-                           "date_modified": "1745940793",
-                           "id": "39",
-                           "name": "HITSS",
-                           "type": "folder"
-                        },
-                        {
-                           "children": [
-                              {
-                                 "date_added": "1762265418",
-                                 "id": "40",
-                                 "name": "Plataforma - Conexao - Gateway Wireless",
-                                 "type": "url",
-                                 "url": "http://10.68.63.1/#/login"
-                              },
-                              {
-                                 "date_added": "1758822649",
-                                 "id": "41",
-                                 "name": "Plataforma - Conexao - Provedores de DNS conhecidos - AdGuard DNS Knowledge Base",
-                                 "type": "url",
-                                 "url": "https://adguard-dns.io/kb/pt-BR/general/dns-providers/"
-                              },
-                              {
-                                 "date_added": "1758822911",
-                                 "id": "42",
-                                 "name": "Plataforma - Corretora - Investimento em Ações - Zero Markets - Forex Broker",
-                                 "type": "url",
-                                 "url": "https://www.zeromarkets.com/pt-br/levycam/"
-                              },
-                              {
-                                 "date_added": "1689613575",
-                                 "id": "43",
-                                 "name": "Plataforma - Corretora - Toro Investimentos - O seu melhor jeito de investir",
-                                 "type": "url",
-                                 "url": "https://www.toroinvestimentos.com.br/trader/"
-                              },
-                              {
-                                 "date_added": "1703427263",
-                                 "id": "44",
-                                 "name": "Plataforma - Ferramenta - Log in to the Bitly Connections Platform",
-                                 "type": "url",
-                                 "url": "https://bitly.com/a/sign_in?rd=%2FBlbickT0GQj%2Fhome"
-                              },
-                              {
-                                 "date_added": "1784859033",
-                                 "id": "45",
-                                 "name": "Plataforma - Ferramenta - Mixer e conversor de áudio online",
-                                 "type": "url",
-                                 "url": "https://www.audio2edit.com/pt"
-                              },
-                              {
-                                 "date_added": "1706068277",
-                                 "id": "46",
-                                 "name": "Plataforma - Ferramenta - Personal Data Leak Checker Your Email Data",
-                                 "type": "url",
-                                 "url": "https://cybernews.com/personal-data-leak-check/"
-                              },
-                              {
-                                 "date_added": "1779060201",
-                                 "id": "47",
-                                 "name": "Plataforma - Ferramenta - PNG para PDF converta online e grátis com Adobe Acrobat",
-                                 "type": "url",
-                                 "url": "https://www.adobe.com/br/acrobat/online/png-to-pdf.html"
-                              },
-                              {
-                                 "date_added": "1691701257",
-                                 "id": "48",
-                                 "name": "Plataforma - Ferramenta - Site Confiável. Vai comprar Verifique se o site é confiável.",
-                                 "type": "url",
-                                 "url": "https://www.siteconfiavel.com.br/"
-                              },
-                              {
-                                 "date_added": "1762359728",
-                                 "id": "49",
-                                 "name": "Plataforma - Ferramenta - Y2meta - Baixador do YouTube",
-                                 "type": "url",
-                                 "url": "https://y2meta.is/pt69/"
-                              },
-                              {
-                                 "date_added": "1733114580",
-                                 "id": "50",
-                                 "name": "Plataforma - Repositorio - Github - espaso",
-                                 "type": "url",
-                                 "url": "https://github.com/espaso"
-                              },
-                              {
-                                 "date_added": "1642164153",
-                                 "id": "51",
-                                 "name": "Plataforma - Repositorio - Github - estoke",
-                                 "type": "url",
-                                 "url": "https://github.com/estoke"
-                              },
-                              {
-                                 "date_added": "1721142268",
-                                 "id": "52",
-                                 "name": "Plataforma - Tecnologia - ChatGPT",
-                                 "type": "url",
-                                 "url": "https://chatgpt.com/"
-                              },
-                              {
-                                 "date_added": "1781098863",
-                                 "id": "53",
-                                 "name": "Plataforma - Tecnologia - Claude",
-                                 "type": "url",
-                                 "url": "https://claude.ai/new"
-                              },
-                              {
-                                 "date_added": "1745127798",
-                                 "id": "54",
-                                 "name": "Plataforma - Tecnologia - Copilot",
-                                 "type": "url",
-                                 "url": "https://copilot.microsoft.com/"
-                              },
-                              {
-                                 "date_added": "1775567167",
-                                 "id": "55",
-                                 "name": "Plataforma - Tecnologia - Gemini",
-                                 "type": "url",
-                                 "url": "https://gemini.google.com/"
-                              }
-                           ],
-                           "date_added": "1632152540",
-                           "date_modified": "1758822620",
-                           "id": "56",
-                           "name": "Plataforma",
+                           "date_added": "0",
+                           "date_modified": "1777941949",
+                           "id": "10",
+                           "name": "Bookmark Bar",
                            "type": "folder"
                         }
                      ],
                      "date_added": "1695877159",
                      "date_modified": "1695878140",
-                     "id": "57",
+                     "id": "7",
                      "name": "Fast Dial",
                      "type": "folder"
                   }
                ],
                "date_added": "0",
                "date_modified": "1777941949",
-               "id": "58",
+               "id": "6",
                "name": "Bookmark Bar",
                "type": "folder"
             }

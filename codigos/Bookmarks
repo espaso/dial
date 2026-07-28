@@ -6,7 +6,7 @@
             {
                "children": [],
                "date_added": "0",
-               "date_modified": "1777941949",
+               "date_modified": "0",
                "id": "4",
                "name": "Synced Bookmarks",
                "type": "folder"
@@ -14,7 +14,7 @@
             {
                "children": [],
                "date_added": "0",
-               "date_modified": "1777941949",
+               "date_modified": "0",
                "id": "5",
                "name": "Other Bookmarks",
                "type": "folder"
@@ -93,7 +93,7 @@
                                  "id": "18",
                                  "name": "Documento - Documento - gov.br - Acesse sua conta",
                                  "type": "url",
-                                 "url": "https://sso.acesso.gov.br/login?client_id=mir.receita.fazenda.gov.br&authorization_id=1896f17fede"
+                                 "url": "https://sso.acesso.gov.br/login?client_id=mir.receita.fazenda.gov.br&amp;authorization_id=1896f17fede"
                               },
                               {
                                  "date_added": "1574340328",
@@ -132,7 +132,7 @@
                               }
                            ],
                            "date_added": "1574340160",
-                           "date_modified": "1758822454",
+                           "date_modified": "1574340160",
                            "id": "8",
                            "name": "Documento",
                            "type": "folder"
@@ -165,7 +165,7 @@
                                  "id": "28",
                                  "name": "Estudo - Mercado - LÓGICA OPERACIONAL - DESCOMPLICANDO SIMPLES",
                                  "type": "url",
-                                 "url": "https://sso.hotmart.com/login?service=https%3A%2F%2Flogicaoperacionaldescomplicand.club.hotmart.com&renew=true&systemOrigin=OldClub"
+                                 "url": "https://sso.hotmart.com/login?service=https%3A%2F%2Flogicaoperacionaldescomplicand.club.hotmart.com&amp;renew=true&amp;systemOrigin=OldClub"
                               },
                               {
                                  "date_added": "1774796079",
@@ -200,7 +200,7 @@
                                  "id": "33",
                                  "name": "Estudo - Tecnologia - UDEMY - Faça login para continuar sua jornada de aprendizado",
                                  "type": "url",
-                                 "url": "https://www.udemy.com/join/passwordless-auth/?next=%2Fhome%2Fmy-courses%2Flearning%2F%3Fp%3D1%26sort%3Dtitle&action=login&mode"
+                                 "url": "https://www.udemy.com/join/passwordless-auth/?next=%2Fhome%2Fmy-courses%2Flearning%2F%3Fp%3D1%26sort%3Dtitle&amp;action=login&amp;mode"
                               },
                               {
                                  "date_added": "1758819901",
@@ -211,7 +211,7 @@
                               }
                            ],
                            "date_added": "1613267650",
-                           "date_modified": "1758822606",
+                           "date_modified": "1613267650",
                            "id": "24",
                            "name": "Estudo",
                            "type": "folder"
@@ -230,21 +230,21 @@
                                  "id": "37",
                                  "name": "HITSS - HITSS - Aplicativos Oracle Fusion Cloud",
                                  "type": "url",
-                                 "url": "https://ipc.claro.com.br/idp/SSO.saml2?SAMLRequest=hVJbb9owFP4rkV94inOh0M0iVAwKQ4OVLWlV7c11ToglXzLbadp%2FPydQqe0Dez0%2B39VndvMiRfAMxnKtslGC41EAiumSq2M2ui%2FW4ZfRzXxmqRQNWbSuVr%2FhbwvWBR6nLBkeMtQaRTS13BJFJVjiGMkX%2Bx1JcUwao51mWqAz5MXyDNXONSSKuq7D3Rhrc4zSOE6ix%2F0uZzVIGnJlHVUMULDWhsEgnaGKCutHhzPlN64Goxf1n05LlnwvikN4uMsLFGxXGeJlWC%2FZJpQhrMX1clJupNj9SpNwv4Pb8bgqnpcF%2FTF9vFIbFDycG0Ke0cOtbWE7OHR%2BFKeTMP4appMiuSbjKZlM%2F6Bg5UviiroB1ce1Pi9vGGaCGo2ZlvjJRLxsojy%2Fw32PKToVTQZ6867hywGptWB6naErSd3l9X7is1fDKgHluHtF8zeHdcklFvrIFW5t6n%2BGMgFM6LbsLUcVlLPoncm30%2FjpSbergxacvf7XRYKTTy5aZRtgvOJQomAhhO6WBqiDDDnTAormJ9GPJzj%2FBw%3D%3D&RelayState=id-rP-qLRODDKyUOgBXoldAilr8uCLNPzn9VExuU9c-&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=VP4mrBAzxji2GCK%2FAjvAvuCUp2HdxkdXJyZfia4OJX4nI8oZP%2ByHbe%2FfKRSRBgFYw5bCu1hs0CPrvrkqa1CtGnFIPfI217LjsN215CfRVMivVxTJShg5xEyxsWDS3TcTWAVlpfL7PNc2wt2X8LM1DbTELloJpKwFP9pbp0gpbnFVSnUKf5Vafc523FC6eaQ26KggpQzfurL%2B8vrODIP4Gh3SNF1cFoqLxW6qskQ7tDWivsGEElNAD1%2BhC58yS9THo4JxPP4S75pvIcu96YIC1OGt59k%2FQd9%2BLw1xaX8uyUHmGhcGLXO5g1KfS%2F%2FG0KzqeLgawsse0BntfYmyAIWHLNXS%2F%2BmrwdmCAjNn%2Fsbxb4VUl65vMNH66Hu9LHqENfGW0yDBvne0LiczSQe%2FT89CZ%2FTSscTqzLk49%2BKJPx5t%2FSB2UwlT%2FXGpfQWZWDZjmHoSw0U1HQUPI%2FwOItJmMLNpv9cOlx%2Bg7ZbB4kzX982tn%2BZWnGCjGbYi84vY2b0GALS4"
+                                 "url": "https://ipc.claro.com.br/idp/SSO.saml2?SAMLRequest=hVJbb9owFP4rkV94inOh0M0iVAwKQ4OVLWlV7c11ToglXzLbadp%2FPydQqe0Dez0%2B39VndvMiRfAMxnKtslGC41EAiumSq2M2ui%2FW4ZfRzXxmqRQNWbSuVr%2FhbwvWBR6nLBkeMtQaRTS13BJFJVjiGMkX%2Bx1JcUwao51mWqAz5MXyDNXONSSKuq7D3Rhrc4zSOE6ix%2F0uZzVIGnJlHVUMULDWhsEgnaGKCutHhzPlN64Goxf1n05LlnwvikN4uMsLFGxXGeJlWC%2FZJpQhrMX1clJupNj9SpNwv4Pb8bgqnpcF%2FTF9vFIbFDycG0Ke0cOtbWE7OHR%2BFKeTMP4appMiuSbjKZlM%2F6Bg5UviiroB1ce1Pi9vGGaCGo2ZlvjJRLxsojy%2Fw32PKToVTQZ6867hywGptWB6naErSd3l9X7is1fDKgHluHtF8zeHdcklFvrIFW5t6n%2BGMgFM6LbsLUcVlLPoncm30%2FjpSbergxacvf7XRYKTTy5aZRtgvOJQomAhhO6WBqiDDDnTAormJ9GPJzj%2FBw%3D%3D&amp;RelayState=id-rP-qLRODDKyUOgBXoldAilr8uCLNPzn9VExuU9c-&amp;SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&amp;Signature=VP4mrBAzxji2GCK%2FAjvAvuCUp2HdxkdXJyZfia4OJX4nI8oZP%2ByHbe%2FfKRSRBgFYw5bCu1hs0CPrvrkqa1CtGnFIPfI217LjsN215CfRVMivVxTJShg5xEyxsWDS3TcTWAVlpfL7PNc2wt2X8LM1DbTELloJpKwFP9pbp0gpbnFVSnUKf5Vafc523FC6eaQ26KggpQzfurL%2B8vrODIP4Gh3SNF1cFoqLxW6qskQ7tDWivsGEElNAD1%2BhC58yS9THo4JxPP4S75pvIcu96YIC1OGt59k%2FQd9%2BLw1xaX8uyUHmGhcGLXO5g1KfS%2F%2FG0KzqeLgawsse0BntfYmyAIWHLNXS%2F%2BmrwdmCAjNn%2Fsbxb4VUl65vMNH66Hu9LHqENfGW0yDBvne0LiczSQe%2FT89CZ%2FTSscTqzLk49%2BKJPx5t%2FSB2UwlT%2FXGpfQWZWDZjmHoSw0U1HQUPI%2FwOItJmMLNpv9cOlx%2Bg7ZbB4kzX982tn%2BZWnGCjGbYi84vY2b0GALS4"
                               },
                               {
                                  "date_added": "1743044548",
                                  "id": "38",
                                  "name": "HITSS - HITSS - Email - Marcos De Franca Santos - Outlook",
                                  "type": "url",
-                                 "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&client-request-id=46ab6ed5-6d13-0145-1256-624697829384&response_mode=fragment&client_info=1&prompt=select_account&nonce=019981f4-5402-726a-bd87-505d15a3e2f3&state=eyJpZCI6IjAxOTk4MWY0LTU0MDItNzc2Zi05ODc2LTgyYWZmZWYzZDU0YiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8_Y2M9ZXlKaFkyTmxjM05mZEc5clpXNGlPbnNpYm1KbUlqcDdJbVZ6YzJWdWRHbGhiQ0k2ZEhKMVpTd2lkbUZzZFdVaU9pSXhOelF6TURRME16VXlJbjBzSW5odGMxOWpZeUk2ZXlKMllXeDFaWE1pT2xzaVExQXhJbDE5ZlN3aWFXUmZkRzlyWlc0aU9uc2libUptSWpwN0ltVnpjMlZ1ZEdsaGJDSTZkSEoxWlN3aWRtRnNkV1VpT2lJeE56UXpNRFEwTXpVeUluMHNJbmh0YzE5all5STZleUoyWVd4MVpYTWlPbHNpUTFBeElsMTlmWDA&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.14.0&response_type=code&code_challenge=vq0pgdeLEr89SuY1x0esF_1ylmRXCIwX-iHwd322qeY&code_challenge_method=S256"
+                                 "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&amp;scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&amp;redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&amp;client-request-id=46ab6ed5-6d13-0145-1256-624697829384&amp;response_mode=fragment&amp;client_info=1&amp;prompt=select_account&amp;nonce=019981f4-5402-726a-bd87-505d15a3e2f3&amp;state=eyJpZCI6IjAxOTk4MWY0LTU0MDItNzc2Zi05ODc2LTgyYWZmZWYzZDU0YiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8_Y2M9ZXlKaFkyTmxjM05mZEc5clpXNGlPbnNpYm1KbUlqcDdJbVZ6YzJWdWRHbGhiQ0k2ZEhKMVpTd2lkbUZzZFdVaU9pSXhOelF6TURRME16VXlJbjBzSW5odGMxOWpZeUk2ZXlKMllXeDFaWE1pT2xzaVExQXhJbDE5ZlN3aWFXUmZkRzlyWlc0aU9uc2libUptSWpwN0ltVnpjMlZ1ZEdsaGJDSTZkSEoxWlN3aWRtRnNkV1VpT2lJeE56UXpNRFEwTXpVeUluMHNJbmh0YzE5all5STZleUoyWVd4MVpYTWlPbHNpUTFBeElsMTlmWDA&amp;claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&amp;x-client-SKU=msal.js.browser&amp;x-client-VER=4.14.0&amp;response_type=code&amp;code_challenge=vq0pgdeLEr89SuY1x0esF_1ylmRXCIwX-iHwd322qeY&amp;code_challenge_method=S256"
                               },
                               {
                                  "date_added": "1664342147",
                                  "id": "39",
                                  "name": "HITSS - HITSS - Portal do Colaborador GLOBAL HITSS",
                                  "type": "url",
-                                 "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/v2.0/authorize?client_id=9205b0ac-8e81-4326-9d0a-78219f6b9388&response_type=code&redirect_uri=https://portaldocolaborador.globalhitss.com.br&response_mode=query&scope=offline_access%20user.read%20mail.read&state=ACCESSOK"
+                                 "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/v2.0/authorize?client_id=9205b0ac-8e81-4326-9d0a-78219f6b9388&amp;response_type=code&amp;redirect_uri=https://portaldocolaborador.globalhitss.com.br&amp;response_mode=query&amp;scope=offline_access%20user.read%20mail.read&amp;state=ACCESSOK"
                               },
                               {
                                  "date_added": "1690513330",
@@ -258,11 +258,11 @@
                                  "id": "41",
                                  "name": "HITSS - HITSS - Rhevolution",
                                  "type": "url",
-                                 "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/authorize?response_type=code&client_id=60b44b54-7af8-416e-8d7b-e4a612d75a1f&scope=openid&nonce=3305a6a9-92d7-4f19-83ca-9a36b507dc8b&redirect_uri=https%3a%2f%2fportalrh.globalhitss.com.br%2f&state=AppProxyState%3a%7b%22InvalidTokenRetry%22%3anull%2c%22IsMsofba%22%3afalse%2c%22OriginalRawUrl%22%3a%22https%3a%5c%2f%5c%2fportalrh.globalhitss.com.br%5c%2fords%5c%2frhportal%5c%2frhlgweb.show%22%2c%22RequestProfileId%22%3anull%2c%22SessionId%22%3a%221b3b00d9-9c37-4b28-9287-9ceb0a2a3762%22%7d%23EndOfStateParam%23&client-request-id=1b3b00d9-9c37-4b28-9287-9ceb0a2a3762&claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d"
+                                 "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/authorize?response_type=code&amp;client_id=60b44b54-7af8-416e-8d7b-e4a612d75a1f&amp;scope=openid&amp;nonce=3305a6a9-92d7-4f19-83ca-9a36b507dc8b&amp;redirect_uri=https%3a%2f%2fportalrh.globalhitss.com.br%2f&amp;state=AppProxyState%3a%7b%22InvalidTokenRetry%22%3anull%2c%22IsMsofba%22%3afalse%2c%22OriginalRawUrl%22%3a%22https%3a%5c%2f%5c%2fportalrh.globalhitss.com.br%5c%2fords%5c%2frhportal%5c%2frhlgweb.show%22%2c%22RequestProfileId%22%3anull%2c%22SessionId%22%3a%221b3b00d9-9c37-4b28-9287-9ceb0a2a3762%22%7d%23EndOfStateParam%23&amp;client-request-id=1b3b00d9-9c37-4b28-9287-9ceb0a2a3762&amp;claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d"
                               }
                            ],
                            "date_added": "1689613902",
-                           "date_modified": "1745940793",
+                           "date_modified": "1689613902",
                            "id": "35",
                            "name": "HITSS",
                            "type": "folder"
@@ -383,28 +383,28 @@
                               }
                            ],
                            "date_added": "1632152540",
-                           "date_modified": "1758822620",
+                           "date_modified": "1632152540",
                            "id": "42",
                            "name": "Plataforma",
                            "type": "folder"
                         }
                      ],
                      "date_added": "1695877159",
-                     "date_modified": "1695878140",
+                     "date_modified": "1695877159",
                      "id": "7",
                      "name": "Fast Dial",
                      "type": "folder"
                   }
                ],
                "date_added": "0",
-               "date_modified": "1777941949",
+               "date_modified": "0",
                "id": "6",
                "name": "Bookmark Bar",
                "type": "folder"
             }
          ],
          "date_added": "0",
-         "date_modified": "1785202111786000",
+         "date_modified": "1785203782513000",
          "id": "1",
          "name": "Barra de favoritos",
          "type": "folder"

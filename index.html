@@ -311,10 +311,10 @@
     }
 
 function formatCardTitle(fullTitle) {
-  if (!fullTitle.title) return '';
+  if (!fullTitle) return '';
   
   // Divide o texto pelo caractere '-'
-  const parts = fullTitle.title.split('-');
+  const parts = fullTitle.split('-');
   
   // Se o texto tiver pelo menos 3 partes (ex: "Parte 1 - Parte 2 - Parte 3")
   if (parts.length >= 3) {
@@ -323,14 +323,14 @@ function formatCardTitle(fullTitle) {
   }
   
   // Caso o título não tenha pelo menos 2 traços, retorna o título original sem espaços extras nas pontas
-  return fullTitle.title.trim();
+  return fullTitle.trim();
 }
 
     // Helper para gerar o HTML do card de um link individual
     function createIndividualCardHtml(item) {
       const imageUrl = getPngImagePath(item.title);
       const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
-	  const cleanTitle = formatCardTitle(item);
+	  const cleanTitle = formatCardTitle(item.title || item.name || "");
 
       return `
         <div class="card-thumbnail-wrapper">
@@ -341,7 +341,7 @@ function formatCardTitle(fullTitle) {
                onerror="this.onerror=null; this.src='${faviconFallback}';">
         </div>
         <div class="card-content">
-          <h2 class="card-title">${cleantitle}</h2>
+          <h2 class="card-title">${cleanTitle}</h2>
           <p class="card-description">${item.description}</p>
         </div>
       `;

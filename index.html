@@ -330,7 +330,7 @@ function formatCardTitle(fullTitle) {
     function createIndividualCardHtml(item) {
       const imageUrl = getPngImagePath(item.title);
       const faviconFallback = `https://www.google.com/s2/favicons?domain=${item.url}&sz=128`;
-	  const cleanTitle = formatCardTitle(item.title || item.name || "");
+	  const cleanTitle = formatCardTitle(item.name);
 
       return `
         <div class="card-thumbnail-wrapper">

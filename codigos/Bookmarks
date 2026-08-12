@@ -226,7 +226,7 @@
                            "id": "33",
                            "name": "HITSS - HITSS - Aplicativos Oracle Fusion Cloud",
                            "type": "url",
-                           "url": "https://ipc.claro.com.br/idp/SSO.saml2?SAMLRequest=hVJbb9owFP4rkV94inOh0M0iVAwKQ4OVLWlV7c11ToglXzLbadp%2FPydQqe0Dez0%2B39VndvMiRfAMxnKtslGC41EAiumSq2M2ui%2FW4ZfRzXxmqRQNWbSuVr%2FhbwvWBR6nLBkeMtQaRTS13BJFJVjiGMkX%2Bx1JcUwao51mWqAz5MXyDNXONSSKuq7D3Rhrc4zSOE6ix%2F0uZzVIGnJlHVUMULDWhsEgnaGKCutHhzPlN64Goxf1n05LlnwvikN4uMsLFGxXGeJlWC%2FZJpQhrMX1clJupNj9SpNwv4Pb8bgqnpcF%2FTF9vFIbFDycG0Ke0cOtbWE7OHR%2BFKeTMP4appMiuSbjKZlM%2F6Bg5UviiroB1ce1Pi9vGGaCGo2ZlvjJRLxsojy%2Fw32PKToVTQZ6867hywGptWB6naErSd3l9X7is1fDKgHluHtF8zeHdcklFvrIFW5t6n%2BGMgFM6LbsLUcVlLPoncm30%2FjpSbergxacvf7XRYKTTy5aZRtgvOJQomAhhO6WBqiDDDnTAormJ9GPJzj%2FBw%3D%3D&RelayState=id-rP-qLRODDKyUOgBXoldAilr8uCLNPzn9VExuU9c-&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=VP4mrBAzxji2GCK%2FAjvAvuCUp2HdxkdXJyZfia4OJX4nI8oZP%2ByHbe%2FfKRSRBgFYw5bCu1hs0CPrvrkqa1CtGnFIPfI217LjsN215CfRVMivVxTJShg5xEyxsWDS3TcTWAVlpfL7PNc2wt2X8LM1DbTELloJpKwFP9pbp0gpbnFVSnUKf5Vafc523FC6eaQ26KggpQzfurL%2B8vrODIP4Gh3SNF1cFoqLxW6qskQ7tDWivsGEElNAD1%2BhC58yS9THo4JxPP4S75pvIcu96YIC1OGt59k%2FQd9%2BLw1xaX8uyUHmGhcGLXO5g1KfS%2F%2FG0KzqeLgawsse0BntfYmyAIWHLNXS%2F%2BmrwdmCAjNn%2Fsbxb4VUl65vMNH66Hu9LHqENfGW0yDBvne0LiczSQe%2FT89CZ%2FTSscTqzLk49%2BKJPx5t%2FSB2UwlT%2FXGpfQWZWDZjmHoSw0U1HQUPI%2FwOItJmMLNpv9cOlx%2Bg7ZbB4kzX982tn%2BZWnGCjGbYi84vY2b0GALS4"
+                           "url": "https://hdim.fa.us2.oraclecloud.com/fscmUI/faces/FuseMobileWelcome"
                         },
                         {
                            "date_added": "13387518148000000",
@@ -383,18 +383,25 @@
                      "id": "55",
                      "name": "Plataforma",
                      "type": "folder"
+                  },
+                  {
+                     "date_added": "13430693005000000",
+                     "id": "56",
+                     "name": "Pedido #3947 - LensShop - Conta",
+                     "type": "url",
+                     "url": "https://account.lensshop.com.br/orders/bc8296c9200ad18d8e68022065d6a5d8?buyer_token_attempted=1&locale=pt-BR"
                   }
                ],
                "date_added": "13340350759000000",
                "date_modified": "13340351740000000",
-               "id": "56",
+               "id": "57",
                "name": "Fast Dial",
                "type": "folder"
             }
          ],
          "date_added": "0",
-         "date_modified": "13422415549000000",
-         "id": "58",
+         "date_modified": "13429996059000000",
+         "id": "59",
          "name": "Barra de favoritos",
          "type": "folder"
       },
@@ -402,7 +409,7 @@
          "children": [],
          "date_added": "0",
          "date_modified": "0",
-         "id": "59",
+         "id": "60",
          "name": "Outros favoritos",
          "type": "folder"
       },
@@ -410,7 +417,7 @@
          "children": [],
          "date_added": "0",
          "date_modified": "0",
-         "id": "60",
+         "id": "61",
          "name": "Favoritos móveis",
          "type": "folder"
       }

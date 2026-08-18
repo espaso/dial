@@ -136,71 +136,64 @@
                            "url": "https://online.btrader.com.br/"
                         },
                         {
-                           "date_added": "13429718941000000",
-                           "id": "21",
-                           "name": "Estudo - Mercado - Boxzero - Vídeos de Estratégias",
-                           "type": "url",
-                           "url": "https://espaso.github.io/estudo/boxzero.html"
-                        },
-                        {
                            "date_added": "13429634306000000",
-                           "id": "22",
+                           "id": "21",
                            "name": "Estudo - Mercado - Checklist de Estratégias",
                            "type": "url",
                            "url": "https://espaso.github.io/estudo/"
                         },
                         {
                            "date_added": "13429719075000000",
-                           "id": "23",
+                           "id": "22",
                            "name": "Estudo - Mercado - Estudo - Vídeos de Estratégias",
                            "type": "url",
                            "url": "https://espaso.github.io/estudo/estudo.html"
                         },
                         {
                            "date_added": "13403293365000000",
-                           "id": "24",
+                           "id": "23",
                            "name": "Estudo - Mercado - LÓGICA OPERACIONAL - DESCOMPLICANDO SIMPLES",
                            "type": "url",
                            "url": "https://sso.hotmart.com/login?service=https%3A%2F%2Flogicaoperacionaldescomplicand.club.hotmart.com&renew=true&systemOrigin=OldClub"
                         },
                         {
                            "date_added": "13419269679000000",
-                           "id": "25",
+                           "id": "24",
                            "name": "Estudo - Tecnologia - FIAP - Nano Courses",
                            "type": "url",
                            "url": "https://on.fiap.com.br/nano-courses/"
                         },
                         {
                            "date_added": "13377595560000000",
-                           "id": "26",
+                           "id": "25",
                            "name": "Estudo - Tecnologia - Future School EAD - Programe-se Programando",
                            "type": "url",
                            "url": "https://futureschoolead.com.br/#inicio"
                         },
                         {
                            "date_added": "13403292876000000",
-                           "id": "27",
+                           "id": "26",
                            "name": "Estudo - Tecnologia - Future School EAD - YouTube",
                            "type": "url",
                            "url": "https://www.youtube.com/@FutureSchoolEAD/playlists"
                         },
                         {
                            "date_added": "13403293568000000",
-                           "id": "28",
+                           "id": "27",
                            "name": "Estudo - Tecnologia - Menu principal - cadcobol.com.br",
                            "type": "url",
                            "url": "https://www.cadcobol.com.br/menuprin.htm"
                         },
                         {
                            "date_added": "13403294184000000",
-                           "id": "29",
+                           "id": "28",
                            "name": "Estudo - Tecnologia - UDEMY - Faça login para continuar sua jornada de aprendizado",
                            "type": "url",
                            "url": "https://www.udemy.com/join/passwordless-auth/?next=%2Fhome%2Fmy-courses%2Flearning%2F%3Fp%3D1%26sort%3Dtitle&action=login&mode"
                         },
                         {
                            "date_added": "13403293501000000",
-                           "id": "30",
+                           "id": "29",
                            "name": "Estudo - Universidade - UVA - Portal do Aluno",
                            "type": "url",
                            "url": "https://portalaluno.uva.br/Login"
@@ -208,7 +201,7 @@
                      ],
                      "date_added": "13257741250000000",
                      "date_modified": "13403296206000000",
-                     "id": "31",
+                     "id": "30",
                      "name": "Estudo",
                      "type": "folder"
                   },
@@ -216,42 +209,42 @@
                      "children": [
                         {
                            "date_added": "13308830445000000",
-                           "id": "32",
+                           "id": "31",
                            "name": "HITSS - HITSS - @HOST Login",
                            "type": "url",
                            "url": "https://host.globalhitss.com/Security/Login?ReturnUrl=%2fHoras%2fCapturaHoras2"
                         },
                         {
                            "date_added": "13389594300000000",
-                           "id": "33",
+                           "id": "32",
                            "name": "HITSS - HITSS - Aplicativos Oracle Fusion Cloud",
                            "type": "url",
                            "url": "https://hdim.fa.us2.oraclecloud.com/fscmUI/faces/FuseMobileWelcome"
                         },
                         {
                            "date_added": "13387518148000000",
-                           "id": "34",
+                           "id": "33",
                            "name": "HITSS - HITSS - Email - Marcos De Franca Santos - Outlook",
                            "type": "url",
                            "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=9199bf20-a13f-4107-85dc-02114787ef48&scope=https%3A%2F%2Foutlook.office.com%2F.default%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Foutlook.office.com%2Fmail%2F&client-request-id=46ab6ed5-6d13-0145-1256-624697829384&response_mode=fragment&client_info=1&prompt=select_account&nonce=019981f4-5402-726a-bd87-505d15a3e2f3&state=eyJpZCI6IjAxOTk4MWY0LTU0MDItNzc2Zi05ODc2LTgyYWZmZWYzZDU0YiIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D%7CaHR0cHM6Ly9vdXRsb29rLm9mZmljZS5jb20vbWFpbC8_Y2M9ZXlKaFkyTmxjM05mZEc5clpXNGlPbnNpYm1KbUlqcDdJbVZ6YzJWdWRHbGhiQ0k2ZEhKMVpTd2lkbUZzZFdVaU9pSXhOelF6TURRME16VXlJbjBzSW5odGMxOWpZeUk2ZXlKMllXeDFaWE1pT2xzaVExQXhJbDE5ZlN3aWFXUmZkRzlyWlc0aU9uc2libUptSWpwN0ltVnpjMlZ1ZEdsaGJDSTZkSEoxWlN3aWRtRnNkV1VpT2lJeE56UXpNRFEwTXpVeUluMHNJbmh0YzE5all5STZleUoyWVd4MVpYTWlPbHNpUTFBeElsMTlmWDA&claims=%7B%22access_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&x-client-SKU=msal.js.browser&x-client-VER=4.14.0&response_type=code&code_challenge=vq0pgdeLEr89SuY1x0esF_1ylmRXCIwX-iHwd322qeY&code_challenge_method=S256"
                         },
                         {
                            "date_added": "13308815747000000",
-                           "id": "35",
+                           "id": "34",
                            "name": "HITSS - HITSS - Portal do Colaborador GLOBAL HITSS",
                            "type": "url",
                            "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/v2.0/authorize?client_id=9205b0ac-8e81-4326-9d0a-78219f6b9388&response_type=code&redirect_uri=https://portaldocolaborador.globalhitss.com.br&response_mode=query&scope=offline_access%20user.read%20mail.read&state=ACCESSOK"
                         },
                         {
                            "date_added": "13334986930000000",
-                           "id": "36",
+                           "id": "35",
                            "name": "HITSS - HITSS - Portal Orhganiza",
                            "type": "url",
                            "url": "https://pontodigital.globalhitss.com.br/entrar"
                         },
                         {
                            "date_added": "13333744782000000",
-                           "id": "37",
+                           "id": "36",
                            "name": "HITSS - HITSS - Rhevolution",
                            "type": "url",
                            "url": "https://login.microsoftonline.com/d6c7d4eb-ad17-46c8-a404-f6a92cbead96/oauth2/authorize?response_type=code&client_id=60b44b54-7af8-416e-8d7b-e4a612d75a1f&scope=openid&nonce=3305a6a9-92d7-4f19-83ca-9a36b507dc8b&redirect_uri=https%3a%2f%2fportalrh.globalhitss.com.br%2f&state=AppProxyState%3a%7b%22InvalidTokenRetry%22%3anull%2c%22IsMsofba%22%3afalse%2c%22OriginalRawUrl%22%3a%22https%3a%5c%2f%5c%2fportalrh.globalhitss.com.br%5c%2fords%5c%2frhportal%5c%2frhlgweb.show%22%2c%22RequestProfileId%22%3anull%2c%22SessionId%22%3a%221b3b00d9-9c37-4b28-9287-9ceb0a2a3762%22%7d%23EndOfStateParam%23&client-request-id=1b3b00d9-9c37-4b28-9287-9ceb0a2a3762&claims=%7b%22id_token%22%3a%7b%22xms_cc%22%3a%7b%22values%22%3a%5b%22CP1%22%5d%7d%7d%7d"
@@ -259,7 +252,7 @@
                      ],
                      "date_added": "13334087502000000",
                      "date_modified": "13390414393000000",
-                     "id": "38",
+                     "id": "37",
                      "name": "HITSS",
                      "type": "folder"
                   },
@@ -267,112 +260,112 @@
                      "children": [
                         {
                            "date_added": "13406739018000000",
-                           "id": "39",
+                           "id": "38",
                            "name": "Plataforma - Conexao - Gateway Wireless",
                            "type": "url",
                            "url": "http://10.68.63.1/#/login"
                         },
                         {
                            "date_added": "13403296249000000",
-                           "id": "40",
+                           "id": "39",
                            "name": "Plataforma - Conexao - Provedores de DNS conhecidos - AdGuard DNS Knowledge Base",
                            "type": "url",
                            "url": "https://adguard-dns.io/kb/pt-BR/general/dns-providers/"
                         },
                         {
                            "date_added": "13403296511000000",
-                           "id": "41",
+                           "id": "40",
                            "name": "Plataforma - Corretora - Investimento em Ações - Zero Markets - Forex Broker",
                            "type": "url",
                            "url": "https://www.zeromarkets.com/pt-br/levycam/"
                         },
                         {
                            "date_added": "13334087175000000",
-                           "id": "42",
+                           "id": "41",
                            "name": "Plataforma - Corretora - Toro Investimentos - O seu melhor jeito de investir",
                            "type": "url",
                            "url": "https://www.toroinvestimentos.com.br/trader/"
                         },
                         {
                            "date_added": "13347900863000000",
-                           "id": "43",
+                           "id": "42",
                            "name": "Plataforma - Ferramenta - Log in to the Bitly Connections Platform",
                            "type": "url",
                            "url": "https://bitly.com/a/sign_in?rd=%2FBlbickT0GQj%2Fhome"
                         },
                         {
                            "date_added": "13429332633000000",
-                           "id": "44",
+                           "id": "43",
                            "name": "Plataforma - Ferramenta - Mixer e conversor de áudio online",
                            "type": "url",
                            "url": "https://www.audio2edit.com/pt"
                         },
                         {
                            "date_added": "13350541877000000",
-                           "id": "45",
+                           "id": "44",
                            "name": "Plataforma - Ferramenta - Personal Data Leak Checker Your Email Data",
                            "type": "url",
                            "url": "https://cybernews.com/personal-data-leak-check/"
                         },
                         {
                            "date_added": "13423533801000000",
-                           "id": "46",
+                           "id": "45",
                            "name": "Plataforma - Ferramenta - PNG para PDF converta online e grátis com Adobe Acrobat",
                            "type": "url",
                            "url": "https://www.adobe.com/br/acrobat/online/png-to-pdf.html"
                         },
                         {
                            "date_added": "13336174857000000",
-                           "id": "47",
+                           "id": "46",
                            "name": "Plataforma - Ferramenta - Site Confiável. Vai comprar Verifique se o site é confiável.",
                            "type": "url",
                            "url": "https://www.siteconfiavel.com.br/"
                         },
                         {
                            "date_added": "13406833328000000",
-                           "id": "48",
+                           "id": "47",
                            "name": "Plataforma - Ferramenta - Y2meta - Baixador do YouTube",
                            "type": "url",
                            "url": "https://y2meta.is/pt69/"
                         },
                         {
                            "date_added": "13377588180000000",
-                           "id": "49",
+                           "id": "48",
                            "name": "Plataforma - Repositorio - Github - espaso",
                            "type": "url",
                            "url": "https://github.com/espaso"
                         },
                         {
                            "date_added": "13286637753000000",
-                           "id": "50",
+                           "id": "49",
                            "name": "Plataforma - Repositorio - Github - estoke",
                            "type": "url",
                            "url": "https://github.com/estoke"
                         },
                         {
                            "date_added": "13365615868000000",
-                           "id": "51",
+                           "id": "50",
                            "name": "Plataforma - Tecnologia - ChatGPT",
                            "type": "url",
                            "url": "https://chatgpt.com/"
                         },
                         {
                            "date_added": "13425572463000000",
-                           "id": "52",
+                           "id": "51",
                            "name": "Plataforma - Tecnologia - Claude",
                            "type": "url",
                            "url": "https://claude.ai/new"
                         },
                         {
                            "date_added": "13389601398000000",
-                           "id": "53",
+                           "id": "52",
                            "name": "Plataforma - Tecnologia - Copilot",
                            "type": "url",
                            "url": "https://copilot.microsoft.com/"
                         },
                         {
                            "date_added": "13420040767000000",
-                           "id": "54",
+                           "id": "53",
                            "name": "Plataforma - Tecnologia - Gemini",
                            "type": "url",
                            "url": "https://gemini.google.com/"
@@ -380,21 +373,21 @@
                      ],
                      "date_added": "13276626140000000",
                      "date_modified": "13403296220000000",
-                     "id": "55",
+                     "id": "54",
                      "name": "Plataforma",
                      "type": "folder"
                   }
                ],
                "date_added": "13340350759000000",
                "date_modified": "13340351740000000",
-               "id": "56",
+               "id": "55",
                "name": "Fast Dial",
                "type": "folder"
             }
          ],
          "date_added": "0",
          "date_modified": "13429996059000000",
-         "id": "58",
+         "id": "57",
          "name": "Barra de favoritos",
          "type": "folder"
       },
@@ -402,7 +395,7 @@
          "children": [],
          "date_added": "0",
          "date_modified": "0",
-         "id": "59",
+         "id": "58",
          "name": "Outros favoritos",
          "type": "folder"
       },
@@ -410,7 +403,7 @@
          "children": [],
          "date_added": "0",
          "date_modified": "0",
-         "id": "60",
+         "id": "59",
          "name": "Favoritos móveis",
          "type": "folder"
       }

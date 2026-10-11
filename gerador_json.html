@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Bookmarks (HTML para JSON)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin-top: 0;
+      color: #1a73e8;
+      font-size: 24px;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 13px;
+      resize: vertical;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    button {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background-color: #1557b0;
+    }
+    button.secondary {
+      background-color: #34a853;
+    }
+    button.secondary:hover {
+      background-color: #2d8e47;
+    }
+    input[type="file"] {
+      display: none;
+    }
+    .file-label {
+      background-color: #5f6368;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      display: inline-block;
+    }
+    .file-label:hover {
+      background-color: #4c4e52;
+    }
+    pre {
+      background-color: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 4px;
+      max-height: 400px;
+      overflow: auto;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Conversor de Bookmarks: HTML → JSON</h1>
+  
+  <div class="input-group">
+    <label for="htmlInput">Cole o HTML de Bookmarks ou selecione um arquivo:</label>
+    <textarea id="htmlInput" placeholder="Cole o código HTML dos favoritos aqui..."></textarea>
+  </div>
+
+  <div class="actions">
+    <label for="fileInput" class="file-label">Carregar Arquivo .html</label>
+    <input type="file" id="fileInput" accept=".html,.htm">
+    
+    <button onclick="convertBookmarks()">Converter para JSON</button>
+    <button id="downloadBtn" class="secondary" onclick="downloadJSON()" style="display: none;">Baixar JSON</button>
+  </div>
+
+  <div class="input-group" id="outputGroup" style="display: none;">
+    <label>Resultado JSON:</label>
+    <pre id="jsonOutput"></pre>
+  </div>
+</div>
+
+<script>
+  let currentId = 1;
+  let generatedJsonData = null;
+
+  // Converte data Unix (segundos/ms) para o formato de timestamp de microsegundos do Chrome
+  function convertToChromeTime(unixTimestamp) {
+    if (!unixTimestamp) return "0";
+    let ts = parseInt(unixTimestamp, 10);
+    // Se o timestamp estiver em segundos (ex: 10 dígitos)
+    if (ts < 10000000000) {
+      ts = ts * 1000;
+    }
+    // Época do Chrome começa em 1 de janeiro de 1601 (diferença de 11644473600 segundos para a época Unix)
+    const chromeEpochOffset = 11644473600000;
+    const chromeTimeMicroseconds = (ts + chromeEpochOffset) * 1000;
+    return chromeTimeMicroseconds.toString();
+  }
+
+  // Manipulação de Upload de Arquivo
+  document.getElementById('fileInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('htmlInput').value = e.target.result;
+    };
+    reader.readAsText(file);
+  });
+
+  // Função principal de parsing do HTML para a estrutura de árvore do Chrome
+  function parseDL(dlElement) {
+    const children = [];
+    const dtElements = Array.from(dlElement.children).filter(el => el.tagName === 'DT');
+
+    for (let dt of dtElements) {
+      const h3 = dt.querySelector(':scope > H3');
+      const a = dt.querySelector(':scope > A');
+      const innerDl = dt.querySelector(':scope > DL');
+
+      if (h3) {
+        // Trata-se de uma pasta (folder)
+        const dateAdded = convertToChromeTime(h3.getAttribute('ADD_DATE'));
+        const dateModified = convertToChromeTime(h3.getAttribute('LAST_MODIFIED'));
+        
+        const folderNode = {
+          children: innerDl ? parseDL(innerDl) : [],
+          date_added: dateAdded,
+          date_modified: dateModified,
+          id: (currentId++).toString(),
+          name: h3.textContent.trim(),
+          type: "folder"
+        };
+        children.push(folderNode);
+      } else if (a) {
+        // Trata-se de um link (url)
+        const dateAdded = convertToChromeTime(a.getAttribute('ADD_DATE'));
+        
+        const urlNode = {
+          date_added: dateAdded,
+          id: (currentId++).toString(),
+          name: a.textContent.trim(),
+          type: "url",
+          url: a.getAttribute('HREF') || ""
+        };
+        children.push(urlNode);
+      }
+    }
+    return children;
+  }
+
+  function convertBookmarks() {
+    const htmlText = document.getElementById('htmlInput').value;
+    if (!htmlText.trim()) {
+      alert('Por favor, cole um HTML ou selecione um arquivo válido.');
+      return;
+    }
+
+    currentId = 1;
+
+    // Parse do texto HTML para um DOM virtual
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+
+    // Cria a estrutura padrão de roots do Chrome
+    const rootDL = doc.querySelector('dl');
+    let mainChildren = [];
+
+    if (rootDL) {
+      mainChildren = parseDL(rootDL);
+    }
+
+    // Procura as pastas principais padrão do Chrome na árvore gerada
+    const bookmarkBarNode = mainChildren.find(item => item.name === 'Bookmark Bar' || item.name === 'Barra de favoritos');
+    const otherNode = mainChildren.find(item => item.name === 'Other Bookmarks' || item.name === 'Outros favoritos');
+    const syncedNode = mainChildren.find(item => item.name === 'Synced Bookmarks' || item.name === 'Favoritos móveis');
+
+    const resultJSON = {
+      checksum: "",
+      roots: {
+        bookmark_bar: {
+          children: bookmarkBarNode ? bookmarkBarNode.children : (mainChildren.length ? mainChildren : []),
+          date_added: "0",
+          date_modified: bookmarkBarNode ? bookmarkBarNode.date_modified : "0",
+          id: (currentId++).toString(),
+          name: "Barra de favoritos",
+          type: "folder"
+        },
+        other: {
+          children: otherNode ? otherNode.children : [],
+          date_added: "0",
+          date_modified: "0",
+          id: (currentId++).toString(),
+          name: "Outros favoritos",
+          type: "folder"
+        },
+        synced: {
+          children: syncedNode ? syncedNode.children : [],
+          date_added: "0",
+          date_modified: "0",
+          id: (currentId++).toString(),
+          name: "Favoritos móveis",
+          type: "folder"
+        }
+      },
+      version: 1
+    };
+
+    generatedJsonData = resultJSON;
+
+    // Exibe o JSON formatado na tela
+    const jsonString = JSON.stringify(resultJSON, null, 3);
+    document.getElementById('jsonOutput').textContent = jsonString;
+    document.getElementById('outputGroup').style.display = 'block';
+    document.getElementById('downloadBtn').style.display = 'inline-block';
+  }
+
+  function downloadJSON() {
+    if (!generatedJsonData) return;
+
+    const blob = new Blob([JSON.stringify(generatedJsonData, null, 3)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Bookmarks.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+
+</body>
+</html>

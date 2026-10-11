@@ -150,53 +150,53 @@
                            "url": "https://msx.benzac.de/"
                         },
                         {
-                           "date_added": "13434790712000000",
+                           "date_added": "13436082672000000",
                            "id": "23",
-                           "name": "Estudo - Mercado - Universidade Trader Toro",
+                           "name": "Estudo - Mercado - Nelogica Invest Academy Avancado",
                            "type": "url",
-                           "url": "https://universidadetrader.toroinvestimentos.com.br/"
-                        },
-                        {
-                           "date_added": "13429719075000000",
-                           "id": "24",
-                           "name": "Estudo - Mercado - Vídeos de Estratégias",
-                           "type": "url",
-                           "url": "https://espaso.github.io/estudo/estudo.html"
-                        },
-                        {
-                           "date_added": "13403294184000000",
-                           "id": "25",
-                           "name": "Estudo - Tecnologia - UDEMY - Faça login para continuar sua jornada de aprendizado",
-                           "type": "url",
-                           "url": "https://www.udemy.com/join/passwordless-auth/?next=%2Fhome%2Fmy-courses%2Flearning%2F%3Fp%3D1%26sort%3Dtitle&action=login&mode"
-                        },
-                        {
-                           "date_added": "13403293501000000",
-                           "id": "26",
-                           "name": "Estudo - Universidade - UVA - Portal do Aluno",
-                           "type": "url",
-                           "url": "https://portalaluno.uva.br/Login"
+                           "url": "https://www.invest.academy/pt/courselp/106"
                         },
                         {
                            "date_added": "13436082647000000",
-                           "id": "27",
+                           "id": "24",
                            "name": "Estudo - Mercado - Nelogica Invest Academy Basico",
                            "type": "url",
                            "url": "https://www.invest.academy/pt/courselp/104"
                         },
                         {
                            "date_added": "13436082664000000",
-                           "id": "28",
+                           "id": "25",
                            "name": "Estudo - Mercado - Nelogica Invest Academy Intermediario",
                            "type": "url",
                            "url": "https://www.invest.academy/pt/courselp/105"
                         },
                         {
-                           "date_added": "13436082672000000",
-                           "id": "29",
-                           "name": "Estudo - Mercado - Nelogica Invest Academy Avancado",
+                           "date_added": "13434790712000000",
+                           "id": "26",
+                           "name": "Estudo - Mercado - Universidade Trader Toro",
                            "type": "url",
-                           "url": "https://www.invest.academy/pt/courselp/106"
+                           "url": "https://universidadetrader.toroinvestimentos.com.br/"
+                        },
+                        {
+                           "date_added": "13429719075000000",
+                           "id": "27",
+                           "name": "Estudo - Mercado - Vídeos de Estratégias",
+                           "type": "url",
+                           "url": "https://espaso.github.io/estudo/estudo.html"
+                        },
+                        {
+                           "date_added": "13403294184000000",
+                           "id": "28",
+                           "name": "Estudo - Tecnologia - UDEMY - Faça login para continuar sua jornada de aprendizado",
+                           "type": "url",
+                           "url": "https://www.udemy.com/join/passwordless-auth/?next=%2Fhome%2Fmy-courses%2Flearning%2F%3Fp%3D1%26sort%3Dtitle&action=login&mode"
+                        },
+                        {
+                           "date_added": "13403293501000000",
+                           "id": "29",
+                           "name": "Estudo - Universidade - UVA - Portal do Aluno",
+                           "type": "url",
+                           "url": "https://portalaluno.uva.br/Login"
                         }
                      ],
                      "date_added": "13257741250000000",
@@ -287,95 +287,95 @@
                            "url": "https://www.toroinvestimentos.com.br/trader/"
                         },
                         {
-                           "date_added": "13347900863000000",
+                           "date_added": "13436195252000000",
                            "id": "42",
+                           "name": "Plataforma - Ferramenta - Conversor de Bookmarks (HTML para JSON)",
+                           "type": "url",
+                           "url": "https://espaso.github.io/dial/gerador_json.html"
+                        },
+                        {
+                           "date_added": "13347900863000000",
+                           "id": "43",
                            "name": "Plataforma - Ferramenta - Log in to the Bitly Connections Platform",
                            "type": "url",
                            "url": "https://bitly.com/a/sign_in?rd=%2FBlbickT0GQj%2Fhome"
                         },
                         {
                            "date_added": "13429332633000000",
-                           "id": "43",
+                           "id": "44",
                            "name": "Plataforma - Ferramenta - Mixer e conversor de áudio online",
                            "type": "url",
                            "url": "https://www.audio2edit.com/pt"
                         },
                         {
                            "date_added": "13350541877000000",
-                           "id": "44",
+                           "id": "45",
                            "name": "Plataforma - Ferramenta - Personal Data Leak Checker Your Email Data",
                            "type": "url",
                            "url": "https://cybernews.com/personal-data-leak-check/"
                         },
                         {
                            "date_added": "13423533801000000",
-                           "id": "45",
+                           "id": "46",
                            "name": "Plataforma - Ferramenta - PNG para PDF converta online e grátis com Adobe Acrobat",
                            "type": "url",
                            "url": "https://www.adobe.com/br/acrobat/online/png-to-pdf.html"
                         },
                         {
                            "date_added": "13336174857000000",
-                           "id": "46",
+                           "id": "47",
                            "name": "Plataforma - Ferramenta - Site Confiável. Vai comprar Verifique se o site é confiável.",
                            "type": "url",
                            "url": "https://www.siteconfiavel.com.br/"
                         },
                         {
                            "date_added": "13406833328000000",
-                           "id": "47",
+                           "id": "48",
                            "name": "Plataforma - Ferramenta - Y2meta - Baixador do YouTube",
                            "type": "url",
                            "url": "https://y2meta.is/pt69/"
                         },
                         {
                            "date_added": "13377588180000000",
-                           "id": "48",
+                           "id": "49",
                            "name": "Plataforma - Repositorio - Github - espaso",
                            "type": "url",
                            "url": "https://github.com/espaso"
                         },
                         {
                            "date_added": "13286637753000000",
-                           "id": "49",
+                           "id": "50",
                            "name": "Plataforma - Repositorio - Github - estoke",
                            "type": "url",
                            "url": "https://github.com/estoke"
                         },
                         {
                            "date_added": "13365615868000000",
-                           "id": "50",
+                           "id": "51",
                            "name": "Plataforma - Tecnologia - ChatGPT",
                            "type": "url",
                            "url": "https://chatgpt.com/"
                         },
                         {
                            "date_added": "13425572463000000",
-                           "id": "51",
+                           "id": "52",
                            "name": "Plataforma - Tecnologia - Claude",
                            "type": "url",
                            "url": "https://claude.ai/new"
                         },
                         {
                            "date_added": "13389601398000000",
-                           "id": "52",
+                           "id": "53",
                            "name": "Plataforma - Tecnologia - Copilot",
                            "type": "url",
                            "url": "https://copilot.microsoft.com/"
                         },
                         {
                            "date_added": "13420040767000000",
-                           "id": "53",
+                           "id": "54",
                            "name": "Plataforma - Tecnologia - Gemini",
                            "type": "url",
                            "url": "https://gemini.google.com/"
-                        },
-                        {
-                           "date_added": "13436195252000000",
-                           "id": "54",
-                           "name": "Plataforma - Ferramenta - Conversor de Bookmarks (HTML para JSON)",
-                           "type": "url",
-                           "url": "https://espaso.github.io/dial/gerador_json.html"
                         }
                      ],
                      "date_added": "13276626140000000",
